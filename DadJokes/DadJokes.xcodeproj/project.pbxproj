@@ -18,9 +18,11 @@
 		29E29E1A23AB196700C89BF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E29E1823AB196700C89BF4 /* Main.storyboard */; };
 		29E29E1C23AB196800C89BF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29E29E1B23AB196800C89BF4 /* Assets.xcassets */; };
 		29E29E1F23AB196800C89BF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E29E1D23AB196800C89BF4 /* LaunchScreen.storyboard */; };
+		5F554770BD0EA2B855657351 /* Pods_DadJokes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC6BCA5CAFD4743D9CB2EF1D /* Pods_DadJokes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B082A2C63C0945798F67643 /* Pods-DadJokes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DadJokes.debug.xcconfig"; path = "Target Support Files/Pods-DadJokes/Pods-DadJokes.debug.xcconfig"; sourceTree = "<group>"; };
 		2971AECC23AB310D00F836BE /* PublicJokesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicJokesTableViewController.swift; sourceTree = "<group>"; };
 		2971AECE23AB313300F836BE /* PublicJokeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicJokeDetailViewController.swift; sourceTree = "<group>"; };
 		2971AED023AB316000F836BE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +36,8 @@
 		29E29E1B23AB196800C89BF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29E29E1E23AB196800C89BF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29E29E2023AB196800C89BF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E3E529BC966789D764B1717 /* Pods-DadJokes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DadJokes.release.xcconfig"; path = "Target Support Files/Pods-DadJokes/Pods-DadJokes.release.xcconfig"; sourceTree = "<group>"; };
+		FC6BCA5CAFD4743D9CB2EF1D /* Pods_DadJokes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DadJokes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F554770BD0EA2B855657351 /* Pods_DadJokes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +57,8 @@
 			children = (
 				29E29E1123AB196700C89BF4 /* DadJokes */,
 				29E29E1023AB196700C89BF4 /* Products */,
+				B06257BD7D38FA3EFD96B951 /* Pods */,
+				D911A797F15B87F28CBA1200 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +129,24 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		B06257BD7D38FA3EFD96B951 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0B082A2C63C0945798F67643 /* Pods-DadJokes.debug.xcconfig */,
+				8E3E529BC966789D764B1717 /* Pods-DadJokes.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D911A797F15B87F28CBA1200 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FC6BCA5CAFD4743D9CB2EF1D /* Pods_DadJokes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +154,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29E29E2323AB196800C89BF4 /* Build configuration list for PBXNativeTarget "DadJokes" */;
 			buildPhases = (
+				CF6A280211E2370B93ACCF82 /* [CP] Check Pods Manifest.lock */,
 				29E29E0B23AB196700C89BF4 /* Sources */,
 				29E29E0C23AB196700C89BF4 /* Frameworks */,
 				29E29E0D23AB196700C89BF4 /* Resources */,
+				0FC72B995AFD99D06C96C764 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -187,6 +214,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FC72B995AFD99D06C96C764 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DadJokes/Pods-DadJokes-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DadJokes/Pods-DadJokes-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DadJokes/Pods-DadJokes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF6A280211E2370B93ACCF82 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DadJokes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		29E29E0B23AB196700C89BF4 /* Sources */ = {
@@ -342,6 +411,7 @@
 		};
 		29E29E2423AB196800C89BF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B082A2C63C0945798F67643 /* Pods-DadJokes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -360,6 +430,7 @@
 		};
 		29E29E2523AB196800C89BF4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E3E529BC966789D764B1717 /* Pods-DadJokes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
