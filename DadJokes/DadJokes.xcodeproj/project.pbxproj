@@ -56,6 +56,11 @@
 		29E29E1123AB196700C89BF4 /* DadJokes */ = {
 			isa = PBXGroup;
 			children = (
+				29E29E2A23AB1B1300C89BF4 /* Helpers */,
+				29E29E2923AB1B0D00C89BF4 /* Models */,
+				29E29E2823AB1B0600C89BF4 /* Model Controllers */,
+				29E29E2723AB1B0000C89BF4 /* Views */,
+				29E29E2623AB1AF500C89BF4 /* View Controllers */,
 				29E29E1223AB196700C89BF4 /* AppDelegate.swift */,
 				29E29E1423AB196700C89BF4 /* SceneDelegate.swift */,
 				29E29E1623AB196700C89BF4 /* ViewController.swift */,
@@ -65,6 +70,41 @@
 				29E29E2023AB196800C89BF4 /* Info.plist */,
 			);
 			path = DadJokes;
+			sourceTree = "<group>";
+		};
+		29E29E2623AB1AF500C89BF4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		29E29E2723AB1B0000C89BF4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		29E29E2823AB1B0600C89BF4 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		29E29E2923AB1B0D00C89BF4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		29E29E2A23AB1B1300C89BF4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
