@@ -7,19 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2971AECD23AB310D00F836BE /* PublicJokesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971AECC23AB310D00F836BE /* PublicJokesTableViewController.swift */; };
+		2971AECF23AB313300F836BE /* PublicJokeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971AECE23AB313300F836BE /* PublicJokeDetailViewController.swift */; };
+		2971AED123AB316000F836BE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971AED023AB316000F836BE /* SignUpViewController.swift */; };
+		2971AED323AB317F00F836BE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971AED223AB317F00F836BE /* SignInViewController.swift */; };
+		2971AED523AB31B000F836BE /* PrivateJokesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971AED423AB31B000F836BE /* PrivateJokesTableViewController.swift */; };
+		2971AED723AB31CD00F836BE /* PrivateJokeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971AED623AB31CD00F836BE /* PrivateJokeDetailViewController.swift */; };
 		29E29E1323AB196700C89BF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E29E1223AB196700C89BF4 /* AppDelegate.swift */; };
 		29E29E1523AB196700C89BF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E29E1423AB196700C89BF4 /* SceneDelegate.swift */; };
-		29E29E1723AB196700C89BF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E29E1623AB196700C89BF4 /* ViewController.swift */; };
 		29E29E1A23AB196700C89BF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E29E1823AB196700C89BF4 /* Main.storyboard */; };
 		29E29E1C23AB196800C89BF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29E29E1B23AB196800C89BF4 /* Assets.xcassets */; };
 		29E29E1F23AB196800C89BF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E29E1D23AB196800C89BF4 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2971AECC23AB310D00F836BE /* PublicJokesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicJokesTableViewController.swift; sourceTree = "<group>"; };
+		2971AECE23AB313300F836BE /* PublicJokeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicJokeDetailViewController.swift; sourceTree = "<group>"; };
+		2971AED023AB316000F836BE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		2971AED223AB317F00F836BE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		2971AED423AB31B000F836BE /* PrivateJokesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateJokesTableViewController.swift; sourceTree = "<group>"; };
+		2971AED623AB31CD00F836BE /* PrivateJokeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateJokeDetailViewController.swift; sourceTree = "<group>"; };
 		29E29E0F23AB196700C89BF4 /* DadJokes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DadJokes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E29E1223AB196700C89BF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29E29E1423AB196700C89BF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		29E29E1623AB196700C89BF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		29E29E1923AB196700C89BF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		29E29E1B23AB196800C89BF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29E29E1E23AB196800C89BF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,7 +73,6 @@
 				29E29E2623AB1AF500C89BF4 /* View Controllers */,
 				29E29E1223AB196700C89BF4 /* AppDelegate.swift */,
 				29E29E1423AB196700C89BF4 /* SceneDelegate.swift */,
-				29E29E1623AB196700C89BF4 /* ViewController.swift */,
 				29E29E1823AB196700C89BF4 /* Main.storyboard */,
 				29E29E1B23AB196800C89BF4 /* Assets.xcassets */,
 				29E29E1D23AB196800C89BF4 /* LaunchScreen.storyboard */,
@@ -75,6 +84,12 @@
 		29E29E2623AB1AF500C89BF4 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2971AECC23AB310D00F836BE /* PublicJokesTableViewController.swift */,
+				2971AECE23AB313300F836BE /* PublicJokeDetailViewController.swift */,
+				2971AED023AB316000F836BE /* SignUpViewController.swift */,
+				2971AED223AB317F00F836BE /* SignInViewController.swift */,
+				2971AED423AB31B000F836BE /* PrivateJokesTableViewController.swift */,
+				2971AED623AB31CD00F836BE /* PrivateJokeDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -178,9 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				29E29E1723AB196700C89BF4 /* ViewController.swift in Sources */,
+				2971AECD23AB310D00F836BE /* PublicJokesTableViewController.swift in Sources */,
+				2971AECF23AB313300F836BE /* PublicJokeDetailViewController.swift in Sources */,
+				2971AED323AB317F00F836BE /* SignInViewController.swift in Sources */,
 				29E29E1323AB196700C89BF4 /* AppDelegate.swift in Sources */,
 				29E29E1523AB196700C89BF4 /* SceneDelegate.swift in Sources */,
+				2971AED523AB31B000F836BE /* PrivateJokesTableViewController.swift in Sources */,
+				2971AED723AB31CD00F836BE /* PrivateJokeDetailViewController.swift in Sources */,
+				2971AED123AB316000F836BE /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
