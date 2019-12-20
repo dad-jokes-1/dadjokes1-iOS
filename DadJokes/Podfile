@@ -8,5 +8,7 @@ target 'DadJokes' do
   # Pods for DadJokes
   pod 'SwiftyJSON', '~> 4.0'
   pod 'Alamofire', '~> 5.0.0-rc.3'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Database'
 
 end
