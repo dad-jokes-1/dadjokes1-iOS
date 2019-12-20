@@ -101,7 +101,7 @@
         <!--Private Jokes Table View Controller-->
         <scene sceneID="z3N-jt-BgR">
             <objects>
-                <tableViewController id="Vyb-1G-k4B" customClass="PrivateJokesTableViewController" customModule="DadJokes" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PrivateJokesVC" id="Vyb-1G-k4B" customClass="PrivateJokesTableViewController" customModule="DadJokes" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bWo-Zv-vmx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,6 +134,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="U1c-HS-jYC">
+                        <barButtonItem key="leftBarButtonItem" title="Sign Out" id="Eld-8u-tNu">
+                            <connections>
+                                <action selector="signOutTapped:" destination="Vyb-1G-k4B" id="PRe-jL-tRv"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sbs-kh-5Xl">
                             <connections>
                                 <segue destination="mFC-uI-rtB" kind="show" identifier="AddJokeSegue" id="RxN-oy-ZKh"/>
