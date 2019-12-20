@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SignUpViewController: UIViewController {
     
@@ -25,9 +26,18 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
-        let privateJokesController = self.storyboard?.instantiateViewController(withIdentifier: "PrivateJokesVC") as! PrivateJokesTableViewController
-        self.navigationController?.pushViewController(privateJokesController, animated: true)
-        self.view.window?.makeKeyAndVisible()
+        guard let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+            let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+        
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+            if error != nil {
+                print("error: \(error!.localizedDescription)")
+            } else {
+                let privateJokesController = self.storyboard?.instantiateViewController(withIdentifier: "PrivateJokesVC") as! PrivateJokesTableViewController
+                self.navigationController?.pushViewController(privateJokesController, animated: true)
+                self.view.window?.makeKeyAndVisible()
+            }
+        }
     }
     
     
