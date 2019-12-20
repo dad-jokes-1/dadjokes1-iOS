@@ -9,6 +9,10 @@
 import UIKit
 
 class PublicJokeDetailViewController: UIViewController {
+    
+    @IBOutlet weak var jokeTitleLabel: UILabel!
+    @IBOutlet weak var jokePunchlineLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
