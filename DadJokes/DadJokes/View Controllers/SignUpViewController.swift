@@ -22,7 +22,16 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupViews()
+    }
+    
+    func setupViews() {
+        Utilities.styleTextField(emailTextField)
+        Utilities.styleTextField(passwordTextField)
+        Utilities.styleTextField(firstNameTextField)
+        Utilities.styleTextField(lastNameTextField)
+        Utilities.styleTextField(usernameTextField)
+        Utilities.styleFilledButton(signUpButton)
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {

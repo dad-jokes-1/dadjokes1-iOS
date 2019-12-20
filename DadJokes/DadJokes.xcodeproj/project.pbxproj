@@ -15,6 +15,7 @@
 		2971AED723AB31CD00F836BE /* PrivateJokeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971AED623AB31CD00F836BE /* PrivateJokeDetailViewController.swift */; };
 		2971AED923AC7AB000F836BE /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971AED823AC7AB000F836BE /* Utilities.swift */; };
 		2971AEDB23AC7E8B00F836BE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2971AEDA23AC7E8B00F836BE /* GoogleService-Info.plist */; };
+		2971AEDD23AC83B600F836BE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971AEDC23AC83B600F836BE /* HomeViewController.swift */; };
 		29E29E1323AB196700C89BF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E29E1223AB196700C89BF4 /* AppDelegate.swift */; };
 		29E29E1523AB196700C89BF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E29E1423AB196700C89BF4 /* SceneDelegate.swift */; };
 		29E29E1A23AB196700C89BF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E29E1823AB196700C89BF4 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		2971AED623AB31CD00F836BE /* PrivateJokeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateJokeDetailViewController.swift; sourceTree = "<group>"; };
 		2971AED823AC7AB000F836BE /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		2971AEDA23AC7E8B00F836BE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2971AEDC23AC83B600F836BE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		29E29E0F23AB196700C89BF4 /* DadJokes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DadJokes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E29E1223AB196700C89BF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29E29E1423AB196700C89BF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				2971AED223AB317F00F836BE /* SignInViewController.swift */,
 				2971AED423AB31B000F836BE /* PrivateJokesTableViewController.swift */,
 				2971AED623AB31CD00F836BE /* PrivateJokeDetailViewController.swift */,
+				2971AEDC23AC83B600F836BE /* HomeViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				2971AED323AB317F00F836BE /* SignInViewController.swift in Sources */,
 				29E29E1323AB196700C89BF4 /* AppDelegate.swift in Sources */,
 				29E29E1523AB196700C89BF4 /* SceneDelegate.swift in Sources */,
+				2971AEDD23AC83B600F836BE /* HomeViewController.swift in Sources */,
 				2971AED523AB31B000F836BE /* PrivateJokesTableViewController.swift in Sources */,
 				2971AED923AC7AB000F836BE /* Utilities.swift in Sources */,
 				2971AED723AB31CD00F836BE /* PrivateJokeDetailViewController.swift in Sources */,
