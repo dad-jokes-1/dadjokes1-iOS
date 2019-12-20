@@ -12,12 +12,19 @@ class SignInViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signInButton: UIButton!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func setupViews() {
+        Utilities.styleTextField(emailTextField)
+        Utilities.styleTextField(passwordTextField)
+        Utilities.styleFilledButton(signInButton)
     }
     
     @IBAction func signInButtonTapped(_ sender: Any) {

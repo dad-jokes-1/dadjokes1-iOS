@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		2971AED323AB317F00F836BE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971AED223AB317F00F836BE /* SignInViewController.swift */; };
 		2971AED523AB31B000F836BE /* PrivateJokesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971AED423AB31B000F836BE /* PrivateJokesTableViewController.swift */; };
 		2971AED723AB31CD00F836BE /* PrivateJokeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971AED623AB31CD00F836BE /* PrivateJokeDetailViewController.swift */; };
+		2971AED923AC7AB000F836BE /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971AED823AC7AB000F836BE /* Utilities.swift */; };
 		29E29E1323AB196700C89BF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E29E1223AB196700C89BF4 /* AppDelegate.swift */; };
 		29E29E1523AB196700C89BF4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E29E1423AB196700C89BF4 /* SceneDelegate.swift */; };
 		29E29E1A23AB196700C89BF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E29E1823AB196700C89BF4 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		2971AED223AB317F00F836BE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		2971AED423AB31B000F836BE /* PrivateJokesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateJokesTableViewController.swift; sourceTree = "<group>"; };
 		2971AED623AB31CD00F836BE /* PrivateJokeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateJokeDetailViewController.swift; sourceTree = "<group>"; };
+		2971AED823AC7AB000F836BE /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		29E29E0F23AB196700C89BF4 /* DadJokes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DadJokes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29E29E1223AB196700C89BF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29E29E1423AB196700C89BF4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		29E29E2A23AB1B1300C89BF4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2971AED823AC7AB000F836BE /* Utilities.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -135,7 +138,6 @@
 				0B082A2C63C0945798F67643 /* Pods-DadJokes.debug.xcconfig */,
 				8E3E529BC966789D764B1717 /* Pods-DadJokes.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -268,6 +270,7 @@
 				29E29E1323AB196700C89BF4 /* AppDelegate.swift in Sources */,
 				29E29E1523AB196700C89BF4 /* SceneDelegate.swift in Sources */,
 				2971AED523AB31B000F836BE /* PrivateJokesTableViewController.swift in Sources */,
+				2971AED923AC7AB000F836BE /* Utilities.swift in Sources */,
 				2971AED723AB31CD00F836BE /* PrivateJokeDetailViewController.swift in Sources */,
 				2971AED123AB316000F836BE /* SignUpViewController.swift in Sources */,
 			);

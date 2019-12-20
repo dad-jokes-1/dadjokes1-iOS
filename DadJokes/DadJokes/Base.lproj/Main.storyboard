@@ -92,6 +92,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="4EM-6b-wyn" id="Pg1-l7-BVC"/>
                         <outlet property="passwordTextField" destination="kQd-EP-8Uk" id="KQt-09-Syn"/>
+                        <outlet property="signInButton" destination="Hzd-cN-MJX" id="sku-hP-292"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKx-Yg-tle" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -375,6 +376,7 @@
                         <outlet property="firstNameTextField" destination="rw5-MU-gOS" id="WYy-Id-1Zn"/>
                         <outlet property="lastNameTextField" destination="buO-WL-2sb" id="x8Q-bB-av7"/>
                         <outlet property="passwordTextField" destination="ZXF-L8-Gp5" id="8iw-9n-lBZ"/>
+                        <outlet property="signUpButton" destination="OsB-Q9-Mzs" id="0WS-gw-V4E"/>
                         <outlet property="usernameTextField" destination="wko-dG-VgF" id="zlH-uQ-jdA"/>
                     </connections>
                 </viewController>
