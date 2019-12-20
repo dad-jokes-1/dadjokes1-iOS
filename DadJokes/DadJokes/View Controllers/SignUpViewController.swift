@@ -24,6 +24,10 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func signUpButtonTapped(_ sender: Any) {
+        let privateJokesController = self.storyboard?.instantiateViewController(withIdentifier: "PrivateJokesVC") as! PrivateJokesTableViewController
+//        self.view.window?.rootViewController = privateJokesController
+        self.navigationController?.pushViewController(privateJokesController, animated: true)
+        self.view.window?.makeKeyAndVisible()
     }
     
     
