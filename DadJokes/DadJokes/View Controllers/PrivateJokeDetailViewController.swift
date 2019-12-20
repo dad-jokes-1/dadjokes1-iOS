@@ -9,6 +9,9 @@
 import UIKit
 
 class PrivateJokeDetailViewController: UIViewController {
+    
+    @IBOutlet weak var jokeTitleTextView: UITextView!
+    @IBOutlet weak var jokePunchlineTextView: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +19,10 @@ class PrivateJokeDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 
