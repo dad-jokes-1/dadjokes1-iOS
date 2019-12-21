@@ -9,22 +9,22 @@
 import UIKit
 
 class PrivateJokesTableViewController: UITableViewController {
+    
+    var apiController = APIController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.hidesBackButton = true  
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        navigationItem.hidesBackButton = true
     }
     
     @IBAction func signOutTapped(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
-
+    @IBAction func addJokeTapped(_ sender: Any) {
+        apiController.fetchJokes()
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
