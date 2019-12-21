@@ -58,14 +58,7 @@ class APIController {
     
     
     func fetchJokes() {
-        AF.request(baseURL).responseJSON { (response) in
-            switch response.result {
-            case .success:
-                print("Success")
-            case .failure:
-                print("error")
-            }
-        }
+        
     }
     
     
