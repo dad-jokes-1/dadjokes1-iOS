@@ -25,7 +25,7 @@ class PrivateJokeDetailViewController: UIViewController {
         guard let jokeQuestion = jokeTitleTextView.text,
             let jokeAnswer = jokePunchlineTextView.text else { return }
         
-        apiController.post(joke: Joke(question: jokeQuestion, answer: jokeAnswer, username: ""))
+        apiController.createJoke(question: jokeQuestion, answer: jokeAnswer, username: "")
         navigationController?.popViewController(animated: true)
     }
     
