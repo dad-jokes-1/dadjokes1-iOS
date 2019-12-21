@@ -12,6 +12,8 @@ class PrivateJokeDetailViewController: UIViewController {
     
     @IBOutlet weak var jokeTitleTextView: UITextView!
     @IBOutlet weak var jokePunchlineTextView: UITextView!
+    
+    let apiController = APIController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,11 @@ class PrivateJokeDetailViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
+        guard let jokeQuestion = jokeTitleTextView.text,
+            let jokeAnswer = jokePunchlineTextView.text else { return }
         
+        apiController.post(joke: Joke(question: jokeQuestion, answer: jokeAnswer, username: ""))
+        navigationController?.popViewController(animated: true)
     }
     
     /*

@@ -32,21 +32,33 @@ class APIController {
     
     
     func post(joke: Joke, completion: @escaping () -> Void = {}) {
-        AF.request(baseURL, method: .post).responseJSON { (response) in
-            
+        let encoder = JSONEncoder()
+        
+        var request = URLRequest(url: baseURL)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = HTTPMethod.post
+        
+        do {
+            request.httpBody = try encoder.encode(joke)
+        } catch {
+            print("Error encoding joke")
+            completion()
+            return
+        }
+        
+        AF.request(request).response { (response) in
+            switch response.result {
+            case .success:
+                print("Success")
+            case .failure:
+                print("Failed")
+            }
         }
     }
     
     
     func fetchJokes() {
-        AF.request(baseURL).responseJSON { (response) in
-            switch response.result {
-            case .success:
-                print("Success")
-            case .failure:
-                print("error")
-            }
-        }
+        
     }
     
     
