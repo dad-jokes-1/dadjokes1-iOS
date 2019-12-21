@@ -62,7 +62,7 @@ class APIController {
         }
     }
     
-    @ discardableResult func createJoke(id: UUID = UUID(), question: String, answer: String, username: String) -> Joke {
+    @discardableResult func createJoke(id: UUID = UUID(), question: String, answer: String, username: String) -> Joke {
         let joke = Joke(id: id, question: question, answer: answer, username: username)
         post(joke: joke)
         // TODO: add saving to CD
