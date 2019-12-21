@@ -46,14 +46,14 @@ class APIController {
             return
         }
         
-        URLSession.shared.dataTask(with: request) { (_, _, error) in
-            if let error = error {
-                print("Error POSTing experience: \(error)")
-                completion()
-                return
+        AF.request(request).response { (response) in
+            switch response.result {
+            case .success:
+                print("Success")
+            case .failure:
+                print("Failed")
             }
-            completion()
-        }.resume()
+        }
     }
     
     
