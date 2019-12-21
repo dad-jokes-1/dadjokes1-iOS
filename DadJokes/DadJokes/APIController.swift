@@ -32,9 +32,28 @@ class APIController {
     
     
     func post(joke: Joke, completion: @escaping () -> Void = {}) {
-        AF.request(baseURL, method: .post).responseJSON { (response) in
-            
+        let encoder = JSONEncoder()
+        
+        var request = URLRequest(url: baseURL)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = HTTPMethod.post
+        
+        do {
+            request.httpBody = try encoder.encode(joke)
+        } catch {
+            print("Error encoding joke")
+            completion()
+            return
         }
+        
+        URLSession.shared.dataTask(with: request) { (_, _, error) in
+            if let error = error {
+                print("Error POSTing experience: \(error)")
+                completion()
+                return
+            }
+            completion()
+        }.resume()
     }
     
     
