@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct Jokes: Codable {
+struct Joke: Codable {
     var id: UUID
     var question: String
     var answer: String

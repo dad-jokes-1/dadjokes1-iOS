@@ -7,7 +7,8 @@
 //
 
 import Foundation
-
+import Alamofire
+import SwiftyJSON
 
 
 class APIController {
@@ -30,13 +31,22 @@ class APIController {
     }
     
     
-    func postJokes() {
-        
+    func post(joke: Joke, completion: @escaping () -> Void = {}) {
+        AF.request(baseURL, method: .post).responseJSON { (response) in
+            
+        }
     }
     
     
     func fetchJokes() {
-        
+        AF.request(baseURL).responseJSON { (response) in
+            switch response.result {
+            case .success:
+                print("Success")
+            case .failure:
+                print("error")
+            }
+        }
     }
     
     
