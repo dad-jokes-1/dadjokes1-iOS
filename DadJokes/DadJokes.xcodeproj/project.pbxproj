@@ -24,7 +24,8 @@
 		29E29E1F23AB196800C89BF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E29E1D23AB196800C89BF4 /* LaunchScreen.storyboard */; };
 		5F554770BD0EA2B855657351 /* Pods_DadJokes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC6BCA5CAFD4743D9CB2EF1D /* Pods_DadJokes.framework */; };
 		93564B4423AE9CFF002C4CC6 /* JokeRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93564B4323AE9CFF002C4CC6 /* JokeRepresentation.swift */; };
-		E699BCC523AE8D7F00594AFC /* Jokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E699BCC423AE8D7F00594AFC /* Jokes.swift */; };
+		93564B4623AE9E27002C4CC6 /* Joke+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93564B4523AE9E27002C4CC6 /* Joke+Convenience.swift */; };
+		93564B4823AE9F75002C4CC6 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93564B4723AE9F75002C4CC6 /* CoreDataStack.swift */; };
 		E699BCC723AE8FB400594AFC /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E699BCC623AE8FB400594AFC /* APIController.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,7 +50,8 @@
 		29E29E2023AB196800C89BF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E3E529BC966789D764B1717 /* Pods-DadJokes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DadJokes.release.xcconfig"; path = "Target Support Files/Pods-DadJokes/Pods-DadJokes.release.xcconfig"; sourceTree = "<group>"; };
 		93564B4323AE9CFF002C4CC6 /* JokeRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeRepresentation.swift; sourceTree = "<group>"; };
-		E699BCC423AE8D7F00594AFC /* Jokes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Jokes.swift; path = DadJokes/Jokes.swift; sourceTree = SOURCE_ROOT; };
+		93564B4523AE9E27002C4CC6 /* Joke+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Joke+Convenience.swift"; sourceTree = "<group>"; };
+		93564B4723AE9F75002C4CC6 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		E699BCC623AE8FB400594AFC /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIController.swift; path = DadJokes/APIController.swift; sourceTree = SOURCE_ROOT; };
 		FC6BCA5CAFD4743D9CB2EF1D /* Pods_DadJokes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DadJokes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -135,9 +137,10 @@
 		29E29E2923AB1B0D00C89BF4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E699BCC423AE8D7F00594AFC /* Jokes.swift */,
 				2971AEDE23AE9A8000F836BE /* Joke.xcdatamodeld */,
 				93564B4323AE9CFF002C4CC6 /* JokeRepresentation.swift */,
+				93564B4523AE9E27002C4CC6 /* Joke+Convenience.swift */,
+				93564B4723AE9F75002C4CC6 /* CoreDataStack.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -290,11 +293,12 @@
 				29E29E1523AB196700C89BF4 /* SceneDelegate.swift in Sources */,
 				2971AEDD23AC83B600F836BE /* HomeViewController.swift in Sources */,
 				2971AED523AB31B000F836BE /* PrivateJokesTableViewController.swift in Sources */,
-				E699BCC523AE8D7F00594AFC /* Jokes.swift in Sources */,
+				93564B4823AE9F75002C4CC6 /* CoreDataStack.swift in Sources */,
 				2971AEE023AE9A8000F836BE /* Joke.xcdatamodeld in Sources */,
 				93564B4423AE9CFF002C4CC6 /* JokeRepresentation.swift in Sources */,
 				E699BCC723AE8FB400594AFC /* APIController.swift in Sources */,
 				2971AED923AC7AB000F836BE /* Utilities.swift in Sources */,
+				93564B4623AE9E27002C4CC6 /* Joke+Convenience.swift in Sources */,
 				2971AED723AB31CD00F836BE /* PrivateJokeDetailViewController.swift in Sources */,
 				2971AED123AB316000F836BE /* SignUpViewController.swift in Sources */,
 			);
