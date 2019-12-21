@@ -22,6 +22,8 @@
 		29E29E1C23AB196800C89BF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29E29E1B23AB196800C89BF4 /* Assets.xcassets */; };
 		29E29E1F23AB196800C89BF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29E29E1D23AB196800C89BF4 /* LaunchScreen.storyboard */; };
 		5F554770BD0EA2B855657351 /* Pods_DadJokes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC6BCA5CAFD4743D9CB2EF1D /* Pods_DadJokes.framework */; };
+		E699BCC523AE8D7F00594AFC /* Jokes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E699BCC423AE8D7F00594AFC /* Jokes.swift */; };
+		E699BCC723AE8FB400594AFC /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E699BCC623AE8FB400594AFC /* APIController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		29E29E1E23AB196800C89BF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29E29E2023AB196800C89BF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E3E529BC966789D764B1717 /* Pods-DadJokes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DadJokes.release.xcconfig"; path = "Target Support Files/Pods-DadJokes/Pods-DadJokes.release.xcconfig"; sourceTree = "<group>"; };
+		E699BCC423AE8D7F00594AFC /* Jokes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Jokes.swift; path = DadJokes/Jokes.swift; sourceTree = SOURCE_ROOT; };
+		E699BCC623AE8FB400594AFC /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIController.swift; path = DadJokes/APIController.swift; sourceTree = SOURCE_ROOT; };
 		FC6BCA5CAFD4743D9CB2EF1D /* Pods_DadJokes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DadJokes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,6 +123,7 @@
 		29E29E2823AB1B0600C89BF4 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E699BCC623AE8FB400594AFC /* APIController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 		29E29E2923AB1B0D00C89BF4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E699BCC423AE8D7F00594AFC /* Jokes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +284,8 @@
 				29E29E1523AB196700C89BF4 /* SceneDelegate.swift in Sources */,
 				2971AEDD23AC83B600F836BE /* HomeViewController.swift in Sources */,
 				2971AED523AB31B000F836BE /* PrivateJokesTableViewController.swift in Sources */,
+				E699BCC523AE8D7F00594AFC /* Jokes.swift in Sources */,
+				E699BCC723AE8FB400594AFC /* APIController.swift in Sources */,
 				2971AED923AC7AB000F836BE /* Utilities.swift in Sources */,
 				2971AED723AB31CD00F836BE /* PrivateJokeDetailViewController.swift in Sources */,
 				2971AED123AB316000F836BE /* SignUpViewController.swift in Sources */,
