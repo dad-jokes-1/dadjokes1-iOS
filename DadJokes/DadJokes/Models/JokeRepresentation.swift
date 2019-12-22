@@ -14,8 +14,7 @@ struct JokeRepresentation: Equatable, Codable {
     let question: String
     let answer: String
     let username: String
-    let password: String
-    let email: String
+
 }
 
 struct JokeRepresentations: Codable {
