@@ -14,6 +14,7 @@ struct JokeRepresentation: Equatable, Codable {
     let question: String
     let answer: String
     let username: String
+
 }
 
 struct JokeRepresentations: Codable {
