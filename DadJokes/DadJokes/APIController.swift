@@ -76,8 +76,14 @@ class APIController {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = HTTPMethod.post
         
+        guard let jokeRepresentation = joke.jokeRepresentation else {
+            print("Joke representation is nil")
+            completion()
+            return
+        }
+        
         do {
-            request.httpBody = try encoder.encode(joke)
+            request.httpBody = try encoder.encode(jokeRepresentation)
         } catch {
             print("Error encoding joke")
             completion()
@@ -92,6 +98,13 @@ class APIController {
                 print("Failed")
             }
         }
+    }
+    
+    @discardableResult func createJoke(id: UUID = UUID(), question: String, answer: String, username: String) -> Joke {
+        let joke = Joke(id: id, question: question, answer: answer, username: username)
+        post(joke: joke)
+        // TODO: add saving to CD
+        return joke
     }
     
     
