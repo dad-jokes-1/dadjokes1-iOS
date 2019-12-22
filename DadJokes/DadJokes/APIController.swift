@@ -9,7 +9,15 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+//import JWTDecode
 
+enum NetworkError: Error {
+    case noAuth
+    case badAuth
+    case otherError
+    case badData
+    case noDecode
+}
 
 class APIController {
     private let baseURL = URL(string: "https://dadjokes-3fe30.firebaseio.com/.json")!
@@ -21,8 +29,38 @@ class APIController {
         static let delete = "DELETE"
     }
     
-    func signUp() {
-        
+    func signUp (username: String, email: String, password: String, completion: @escaping (Error?) -> Void = {_ in})  {
+        let signUpURL = baseURL.appendingPathComponent("register")
+                
+                var request = URLRequest(url: signUpURL)
+                request.httpMethod = HTTPMethod.post // raw value
+                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+                //        request.addValue("USER_TOKEN", forHTTPHeaderField: "Authorization")
+                
+        let userParams = ["username": username, "email": email, "password": password] as [String: Any]
+                do {
+                    let json = try JSONSerialization.data(withJSONObject: userParams, options: .prettyPrinted)
+                    request.httpBody = json
+                } catch {
+                    NSLog("Error encoding JSON")
+                    return
+                }
+                URLSession.shared.dataTask(with: request) { _, response, error in
+                    if let response = response as? HTTPURLResponse,
+                        response.statusCode != 200 {
+                        
+                        completion(NSError(domain:"", code: response.statusCode, userInfo: nil))
+                        return
+                    }
+                    if let error = error {
+                        completion(error)
+                        return
+                    }
+                    NSLog("Successfully signed up User")
+//                    self.signIn(email: email, password: password, completion: completion)
+         
+                    completion(nil)
+                } .resume()
     }
     
     
