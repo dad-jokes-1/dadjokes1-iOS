@@ -146,7 +146,6 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sbs-kh-5Xl">
                             <connections>
-                                <action selector="addJokeTapped:" destination="Vyb-1G-k4B" id="QuW-Pb-xGW"/>
                                 <segue destination="mFC-uI-rtB" kind="show" identifier="AddJokeSegue" id="RxN-oy-ZKh"/>
                             </connections>
                         </barButtonItem>

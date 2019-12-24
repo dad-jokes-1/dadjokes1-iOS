@@ -19,21 +19,19 @@ enum NetworkError: Error {
     case noDecode
 }
 
+struct HTTPMethod {
+    static let get = "GET"
+    static let put = "PUT"
+    static let post = "POST"
+    static let delete = "DELETE"
+}
+
 class APIController {
     private let baseURL = URL(string: "https://dadjokes-3fe30.firebaseio.com/.json")!
     
     init() {
         fetchJokesFromServer()
     }
-    
-    struct HTTPMethod {
-        static let get = "GET"
-        static let put = "PUT"
-        static let post = "POST"
-        static let delete = "DELETE"
-    }
-    
-    var jokes: [JokeRepresentation] = []
     
     func signUp(username: String, email: String, password: String, completion: @escaping (Error?) -> Void = {_ in})  {
         let signUpURL = baseURL.appendingPathComponent("register")
