@@ -11,11 +11,11 @@ import CoreData
 
 extension Joke {
     
-    @discardableResult convenience init(id: UUID,
+    @discardableResult convenience init(id: UUID = UUID(),
                                         question: String,
                                         answer: String,
                                         username: String,
-                                        context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+                                        context: NSManagedObjectContext) {
         self.init(context: context)
         
         self.id = id

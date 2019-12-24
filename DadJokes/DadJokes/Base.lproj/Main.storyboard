@@ -146,7 +146,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Sbs-kh-5Xl">
                             <connections>
-                                <segue destination="mFC-uI-rtB" kind="show" identifier="AddJokeSegue" id="RxN-oy-ZKh"/>
+                                <segue destination="mFC-uI-rtB" kind="show" identifier="AddJokeSegue" id="yia-DG-Nq0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -468,6 +468,6 @@
         <image name="list.dash" catalog="system" width="64" height="42"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NQM-pK-kws"/>
+        <segue reference="yia-DG-Nq0"/>
     </inferredMetricsTieBreakers>
 </document>

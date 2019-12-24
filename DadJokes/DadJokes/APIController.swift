@@ -102,11 +102,18 @@ class APIController {
         }
     }
     
-    @discardableResult func createJoke(id: UUID = UUID(), question: String, answer: String, username: String) -> Joke {
-        let joke = Joke(id: id, question: question, answer: answer, username: username, context: CoreDataStack.shared.mainContext)
+    @discardableResult func createJoke(question: String, answer: String) -> Joke {
+        let joke = Joke(question: question, answer: answer, username: "", context: CoreDataStack.shared.mainContext)
         post(joke: joke)
         CoreDataStack.shared.save()
         return joke
+    }
+    
+    func updateJoke(joke: Joke, with question: String, answer: String) {
+        joke.question = question
+        joke.answer = answer
+        post(joke: joke)
+        CoreDataStack.shared.save()
     }
     
     func fetchJokesFromServer(completion: @escaping (Error?) -> Void = { _ in }) {
