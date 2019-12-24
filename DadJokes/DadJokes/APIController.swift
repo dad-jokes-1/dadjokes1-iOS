@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-//import JWTDecode
+import CoreData
 
 enum NetworkError: Error {
     case noAuth
@@ -37,43 +37,41 @@ class APIController {
     
     func signUp(username: String, email: String, password: String, completion: @escaping (Error?) -> Void = {_ in})  {
         let signUpURL = baseURL.appendingPathComponent("register")
-                
-                var request = URLRequest(url: signUpURL)
-                request.httpMethod = HTTPMethod.post // raw value
-                request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-                //        request.addValue("USER_TOKEN", forHTTPHeaderField: "Authorization")
-                
+        
+        var request = URLRequest(url: signUpURL)
+        request.httpMethod = HTTPMethod.post // raw value
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        //        request.addValue("USER_TOKEN", forHTTPHeaderField: "Authorization")
+        
         let userParams = ["username": username, "email": email, "password": password] as [String: Any]
-                do {
-                    let json = try JSONSerialization.data(withJSONObject: userParams, options: .prettyPrinted)
-                    request.httpBody = json
-                } catch {
-                    NSLog("Error encoding JSON")
-                    return
-                }
-                URLSession.shared.dataTask(with: request) { _, response, error in
-                    if let response = response as? HTTPURLResponse,
-                        response.statusCode != 200 {
-                        
-                        completion(NSError(domain:"", code: response.statusCode, userInfo: nil))
-                        return
-                    }
-                    if let error = error {
-                        completion(error)
-                        return
-                    }
-                    NSLog("Successfully signed up User")
-//                    self.signIn(email: email, password: password, completion: completion)
-         
-                    completion(nil)
-                } .resume()
+        do {
+            let json = try JSONSerialization.data(withJSONObject: userParams, options: .prettyPrinted)
+            request.httpBody = json
+        } catch {
+            NSLog("Error encoding JSON")
+            return
+        }
+        URLSession.shared.dataTask(with: request) { _, response, error in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                
+                completion(NSError(domain:"", code: response.statusCode, userInfo: nil))
+                return
+            }
+            if let error = error {
+                completion(error)
+                return
+            }
+            NSLog("Successfully signed up User")
+            //                    self.signIn(email: email, password: password, completion: completion)
+            
+            completion(nil)
+        } .resume()
     }
-    
     
     func signIn() {
         
     }
-    
     
     func post(joke: Joke, completion: @escaping () -> Void = {}) {
         let encoder = JSONEncoder()
@@ -107,12 +105,11 @@ class APIController {
     }
     
     @discardableResult func createJoke(id: UUID = UUID(), question: String, answer: String, username: String) -> Joke {
-        let joke = Joke(id: id, question: question, answer: answer, username: username)
+        let joke = Joke(id: id, question: question, answer: answer, username: username, context: CoreDataStack.shared.mainContext)
         post(joke: joke)
-        // TODO: add saving to CD
+        CoreDataStack.shared.save()
         return joke
     }
-    
     
     func fetchJokesFromServer(completion: @escaping (Error?) -> Void = { _ in }) {
         var request = URLRequest(url: baseURL)
@@ -138,8 +135,8 @@ class APIController {
             
             do {
                 let decoder = JSONDecoder()
-                let jokes = try decoder.decode([String: JokeRepresentation].self, from: data).map({ $0.value })
-                self.jokes = jokes
+                let jokeRepresentations = try decoder.decode([String: JokeRepresentation].self, from: data).map({ $0.value })
+                self.updateJokes(with: jokeRepresentations)
             } catch {
                 completion(error)
                 return
@@ -147,11 +144,41 @@ class APIController {
         }.resume()
     }
     
-    
-    func updateJokes(){
+    func updateJokes(with representations: [JokeRepresentation]) {
+        let identifiersToFetch = representations.compactMap({ UUID(uuidString: $0.id) })
+        let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
         
+        var jokesToCreate = representationsByID
+        
+        let context = CoreDataStack.shared.mainContext
+        context.performAndWait {
+            do {
+                let fetchRequest: NSFetchRequest<Joke> = Joke.fetchRequest()
+                fetchRequest.predicate = NSPredicate(format: "id IN %@", identifiersToFetch)
+                
+                let existingJokes = try context.fetch(fetchRequest)
+                
+                for joke in existingJokes {
+                    guard let id = joke.id,
+                        let representation = representationsByID[id] else { continue }
+                    
+                    joke.answer = representation.answer
+                    joke.question = representation.question
+                    joke.username = representation.username
+                    
+                    jokesToCreate.removeValue(forKey: id)
+                }
+                
+                for representation in jokesToCreate.values {
+                    Joke(jokeRepresentation: representation, context: context)
+                }
+                
+                CoreDataStack.shared.save(context: context)
+            } catch {
+                print("Error fetching jokes from persistent store: \(error)")
+            }
+        }
     }
-    
     
     func deleteJoke(){
         
