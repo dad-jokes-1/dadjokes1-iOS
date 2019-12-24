@@ -10,7 +10,7 @@ import Foundation
 
 struct JokeRepresentation: Equatable, Codable {
     
-    let id: UUID
+    let id: String
     let question: String
     let answer: String
     let username: String

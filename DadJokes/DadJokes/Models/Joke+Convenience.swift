@@ -29,7 +29,7 @@ extension Joke {
     }
     
     var jokeRepresentation: JokeRepresentation? {
-        return JokeRepresentation(id: id ?? UUID(), question: question ?? "", answer: answer ?? "", username: username ?? "")
+        return JokeRepresentation(id: id?.uuidString ?? "", question: question ?? "", answer: answer ?? "", username: username ?? "")
     }
 }
 
