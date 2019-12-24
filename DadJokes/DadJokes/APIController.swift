@@ -22,6 +22,10 @@ enum NetworkError: Error {
 class APIController {
     private let baseURL = URL(string: "https://dadjokes-3fe30.firebaseio.com/.json")!
     
+    init() {
+        fetchJokesFromServer()
+    }
+    
     struct HTTPMethod {
         static let get = "GET"
         static let put = "PUT"
@@ -29,7 +33,9 @@ class APIController {
         static let delete = "DELETE"
     }
     
-    func signUp (username: String, email: String, password: String, completion: @escaping (Error?) -> Void = {_ in})  {
+    var jokes: [JokeRepresentation] = []
+    
+    func signUp(username: String, email: String, password: String, completion: @escaping (Error?) -> Void = {_ in})  {
         let signUpURL = baseURL.appendingPathComponent("register")
                 
                 var request = URLRequest(url: signUpURL)
@@ -108,8 +114,37 @@ class APIController {
     }
     
     
-    func fetchJokes() {
+    func fetchJokesFromServer(completion: @escaping (Error?) -> Void = { _ in }) {
+        var request = URLRequest(url: baseURL)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = HTTPMethod.get
         
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                completion(error)
+                return
+            }
+            
+            if let error = error {
+                completion(error)
+                return
+            }
+            
+            guard let data = data else {
+                completion(error)
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                let jokes = try decoder.decode([String: JokeRepresentation].self, from: data).map({ $0.value })
+                self.jokes = jokes
+            } catch {
+                completion(error)
+                return
+            }
+        }.resume()
     }
     
     
