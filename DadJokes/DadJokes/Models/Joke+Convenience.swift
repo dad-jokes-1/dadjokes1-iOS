@@ -11,11 +11,11 @@ import CoreData
 
 extension Joke {
     
-    @discardableResult convenience init(id: UUID,
-                                        question: String,
-                                        answer: String,
-                                        username: String,
-                                        context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    convenience init(id: UUID = UUID(),
+                     question: String,
+                     answer: String,
+                     username: String,
+                     context: NSManagedObjectContext) {
         self.init(context: context)
         
         self.id = id
@@ -25,7 +25,8 @@ extension Joke {
     }
     
     @discardableResult convenience init?(jokeRepresentation: JokeRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        self.init(context: context)
+        guard let id = UUID(uuidString: jokeRepresentation.id) else { return nil }
+        self.init(id: id, question: jokeRepresentation.question, answer: jokeRepresentation.answer, username: jokeRepresentation.username, context: context)
     }
     
     var jokeRepresentation: JokeRepresentation? {
