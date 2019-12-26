@@ -11,27 +11,32 @@ import CoreData
 
 extension Joke {
     
-    convenience init(id: UUID = UUID(),
+    var jokeRepresentation: JokeRepresentation? {
+        guard let question = question,
+            let identifier = identifier?.uuidString,
+            let answer = answer,
+            let username = username else { return nil }
+        return JokeRepresentation(identifier: identifier, question: question, answer: answer, username: username)
+    }
+    
+    convenience init(identifier: UUID = UUID(),
                      question: String,
                      answer: String,
                      username: String,
                      context: NSManagedObjectContext) {
         self.init(context: context)
         
-        self.id = id
+        self.identifier = identifier
         self.question = question
         self.answer = answer
         self.username = username
     }
     
-    @discardableResult convenience init?(jokeRepresentation: JokeRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        guard let id = UUID(uuidString: jokeRepresentation.id) else { return nil }
-        self.init(id: id, question: jokeRepresentation.question, answer: jokeRepresentation.answer, username: jokeRepresentation.username, context: context)
+    @discardableResult convenience init?(jokeRepresentation: JokeRepresentation, context: NSManagedObjectContext) {
+        guard let identifier = UUID(uuidString: jokeRepresentation.identifier) else { return nil }
+        self.init(identifier: identifier, question: jokeRepresentation.question, answer: jokeRepresentation.answer, username: jokeRepresentation.username, context: context)
     }
     
-    var jokeRepresentation: JokeRepresentation? {
-        return JokeRepresentation(id: id?.uuidString ?? "", question: question ?? "", answer: answer ?? "", username: username ?? "")
-    }
 }
 
 
