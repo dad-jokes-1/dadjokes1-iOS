@@ -15,9 +15,9 @@ class PrivateJokesTableViewController: UITableViewController {
     
     lazy var fetchedResultsController: NSFetchedResultsController<Joke> = {
         let fetchRequest: NSFetchRequest<Joke> = Joke.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "question", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "username", ascending: true)]
         
-        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: "question", cacheName: nil)
+        let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.shared.mainContext, sectionNameKeyPath: "username", cacheName: nil)
         frc.delegate = self
         
         do {

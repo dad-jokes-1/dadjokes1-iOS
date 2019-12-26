@@ -8,16 +8,9 @@
 
 import Foundation
 
-struct JokeRepresentation: Equatable, Codable {
-    
-    let id: String
+struct JokeRepresentation: Codable {
+    let identifier: String
     let question: String
     let answer: String
     let username: String
-
-}
-
-struct JokeRepresentations: Codable {
-    
-    let results: [JokeRepresentation]
 }
