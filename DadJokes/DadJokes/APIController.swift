@@ -27,7 +27,7 @@ struct HTTPMethod {
 }
 
 class APIController {
-    private let baseURL = URL(string: "https://dadjokes-3fe30.firebaseio.com/.json")!
+    private let baseURL = URL(string: "https://dadjokes-3fe30.firebaseio.com/")!
     
     init() {
         fetchJokesFromServer()
@@ -71,12 +71,14 @@ class APIController {
         
     }
     
-    func post(joke: Joke, completion: @escaping () -> Void = {}) {
-        let encoder = JSONEncoder()
+    func put(joke: Joke, completion: @escaping () -> Void = {}) {
+        let identifier = joke.identifier ?? UUID()
+        joke.identifier = identifier
         
-        var request = URLRequest(url: baseURL)
+        let requestURL = baseURL.appendingPathComponent(identifier.uuidString).appendingPathExtension("json")
+        var request = URLRequest(url: requestURL)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = HTTPMethod.post
+        request.httpMethod = HTTPMethod.put
         
         guard let jokeRepresentation = joke.jokeRepresentation else {
             print("Joke representation is nil")
@@ -85,7 +87,7 @@ class APIController {
         }
         
         do {
-            request.httpBody = try encoder.encode(jokeRepresentation)
+            request.httpBody = try JSONEncoder().encode(jokeRepresentation)
         } catch {
             print("Error encoding joke")
             completion()
@@ -104,7 +106,7 @@ class APIController {
     
     @discardableResult func createJoke(question: String, answer: String) -> Joke {
         let joke = Joke(question: question, answer: answer, username: "", context: CoreDataStack.shared.mainContext)
-        post(joke: joke)
+        put(joke: joke)
         CoreDataStack.shared.save()
         return joke
     }
@@ -112,12 +114,13 @@ class APIController {
     func updateJoke(joke: Joke, with question: String, answer: String) {
         joke.question = question
         joke.answer = answer
-        post(joke: joke)
+        put(joke: joke)
         CoreDataStack.shared.save()
     }
     
     func fetchJokesFromServer(completion: @escaping (Error?) -> Void = { _ in }) {
-        var request = URLRequest(url: baseURL)
+        let requestURL = baseURL.appendingPathExtension("json")
+        var request = URLRequest(url: requestURL)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = HTTPMethod.get
         
@@ -139,8 +142,7 @@ class APIController {
             }
             
             do {
-                let decoder = JSONDecoder()
-                let jokeRepresentations = try decoder.decode([String: JokeRepresentation].self, from: data).map({ $0.value })
+                let jokeRepresentations = try JSONDecoder().decode([String: JokeRepresentation].self, from: data).map({ $0.value })
                 self.updateJokes(with: jokeRepresentations)
             } catch {
                 completion(error)
@@ -150,7 +152,7 @@ class APIController {
     }
     
     func updateJokes(with representations: [JokeRepresentation]) {
-        let identifiersToFetch = representations.compactMap({ UUID(uuidString: $0.id) })
+        let identifiersToFetch = representations.compactMap({ UUID(uuidString: $0.identifier) })
         let representationsByID = Dictionary(uniqueKeysWithValues: zip(identifiersToFetch, representations))
         
         var jokesToCreate = representationsByID
@@ -159,19 +161,19 @@ class APIController {
         context.performAndWait {
             do {
                 let fetchRequest: NSFetchRequest<Joke> = Joke.fetchRequest()
-                fetchRequest.predicate = NSPredicate(format: "id IN %@", identifiersToFetch)
+                fetchRequest.predicate = NSPredicate(format: "identifier IN %@", identifiersToFetch)
                 
                 let existingJokes = try context.fetch(fetchRequest)
                 
                 for joke in existingJokes {
-                    guard let id = joke.id,
-                        let representation = representationsByID[id] else { continue }
+                    guard let identifier = joke.identifier,
+                        let representation = representationsByID[identifier] else { continue }
                     
                     joke.answer = representation.answer
                     joke.question = representation.question
                     joke.username = representation.username
                     
-                    jokesToCreate.removeValue(forKey: id)
+                    jokesToCreate.removeValue(forKey: identifier)
                 }
                 
                 for representation in jokesToCreate.values {
