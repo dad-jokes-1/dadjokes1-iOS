@@ -118,6 +118,33 @@ class APIController {
         CoreDataStack.shared.save()
     }
     
+    func delete(joke: Joke, completion: @escaping (Error?) -> Void = { _ in }) {
+        let identifier = joke.identifier ?? UUID()
+        joke.identifier = identifier
+        
+        let requestURL = baseURL.appendingPathComponent(identifier.uuidString).appendingPathExtension("json")
+        var request = URLRequest(url: requestURL)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = HTTPMethod.delete
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let response = response as? HTTPURLResponse,
+                response.statusCode != 200 {
+                completion(error)
+                return
+            }
+            
+            if let error = error {
+                completion(error)
+                return
+            }
+            
+        }.resume()
+        
+        CoreDataStack.shared.mainContext.delete(joke)
+        CoreDataStack.shared.save()
+    }
+    
     func fetchJokesFromServer(completion: @escaping (Error?) -> Void = { _ in }) {
         let requestURL = baseURL.appendingPathExtension("json")
         var request = URLRequest(url: requestURL)
@@ -185,10 +212,6 @@ class APIController {
                 print("Error fetching jokes from persistent store: \(error)")
             }
         }
-    }
-    
-    func deleteJoke(){
-        
     }
     
 }
