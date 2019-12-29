@@ -42,23 +42,15 @@ class SignUpViewController: UIViewController {
             if error != nil {
                 print("error: \(error!.localizedDescription)")
             } else {
-                let privateJokesController = self.storyboard?.instantiateViewController(withIdentifier: "PrivateJokesVC") as! PrivateJokesTableViewController
-                self.navigationController?.pushViewController(privateJokesController, animated: true)
-                self.view.window?.makeKeyAndVisible()
+                Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+                    if error == nil {
+                        let privateJokesController = self.storyboard?.instantiateViewController(withIdentifier: "PrivateJokesVC") as! PrivateJokesTableViewController
+                        self.navigationController?.pushViewController(privateJokesController, animated: true)
+                        self.view.window?.makeKeyAndVisible()
+                    }
+                }
             }
         }
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
