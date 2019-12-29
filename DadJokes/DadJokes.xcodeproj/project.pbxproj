@@ -27,6 +27,7 @@
 		93564B4623AE9E27002C4CC6 /* Joke+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93564B4523AE9E27002C4CC6 /* Joke+Convenience.swift */; };
 		93564B4823AE9F75002C4CC6 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93564B4723AE9F75002C4CC6 /* CoreDataStack.swift */; };
 		CCD3E94E23B548EB002E082C /* DadJokesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD3E94D23B548EB002E082C /* DadJokesUITests.swift */; };
+		CCD3E95923B925E5002E082C /* smile.json in Resources */ = {isa = PBXBuildFile; fileRef = CCD3E95823B925E5002E082C /* smile.json */; };
 		E699BCC723AE8FB400594AFC /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E699BCC623AE8FB400594AFC /* APIController.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		CCD3E94B23B548EB002E082C /* DadJokesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DadJokesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCD3E94D23B548EB002E082C /* DadJokesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadJokesUITests.swift; sourceTree = "<group>"; };
 		CCD3E94F23B548EB002E082C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCD3E95823B925E5002E082C /* smile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = smile.json; sourceTree = "<group>"; };
 		E699BCC623AE8FB400594AFC /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIController.swift; path = DadJokes/APIController.swift; sourceTree = SOURCE_ROOT; };
 		FC6BCA5CAFD4743D9CB2EF1D /* Pods_DadJokes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DadJokes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 		29E29E1123AB196700C89BF4 /* DadJokes */ = {
 			isa = PBXGroup;
 			children = (
+				CCD3E95523B92296002E082C /* Animations */,
 				29E29E2A23AB1B1300C89BF4 /* Helpers */,
 				29E29E2923AB1B0D00C89BF4 /* Models */,
 				29E29E2823AB1B0600C89BF4 /* Model Controllers */,
@@ -192,6 +195,14 @@
 				CCD3E94F23B548EB002E082C /* Info.plist */,
 			);
 			path = DadJokesUITests;
+			sourceTree = "<group>";
+		};
+		CCD3E95523B92296002E082C /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				CCD3E95823B925E5002E082C /* smile.json */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		D911A797F15B87F28CBA1200 /* Frameworks */ = {
@@ -285,6 +296,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCD3E95923B925E5002E082C /* smile.json in Resources */,
 				29E29E1F23AB196800C89BF4 /* LaunchScreen.storyboard in Resources */,
 				2971AEDB23AC7E8B00F836BE /* GoogleService-Info.plist in Resources */,
 				29E29E1C23AB196800C89BF4 /* Assets.xcassets in Resources */,
