@@ -37,17 +37,31 @@
                                     <constraint firstAttribute="height" constant="116" id="v4g-kd-Ox7"/>
                                 </constraints>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKF-av-M7N" customClass="AnimationView" customModule="Lottie">
+                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Xgc-F1-JH4"/>
+                                    <constraint firstAttribute="height" constant="200" id="n3D-WB-Sv4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="smile"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="NMA-EY-5Pa" firstAttribute="bottom" secondItem="09d-mU-6c8" secondAttribute="bottom" constant="40" id="RfS-FI-fra"/>
                             <constraint firstItem="NMA-EY-5Pa" firstAttribute="trailing" secondItem="09d-mU-6c8" secondAttribute="trailing" constant="40" id="ZDo-jz-pWk"/>
+                            <constraint firstItem="GKF-av-M7N" firstAttribute="centerY" secondItem="ALf-Dy-Im1" secondAttribute="centerY" id="drJ-fW-NdU"/>
+                            <constraint firstItem="GKF-av-M7N" firstAttribute="centerX" secondItem="ALf-Dy-Im1" secondAttribute="centerX" id="u2V-Va-9NK"/>
                             <constraint firstItem="09d-mU-6c8" firstAttribute="leading" secondItem="NMA-EY-5Pa" secondAttribute="leading" constant="40" id="uSk-Fg-eAU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NMA-EY-5Pa"/>
                     </view>
                     <navigationItem key="navigationItem" id="kxK-D1-2gH"/>
                     <connections>
+                        <outlet property="animationView" destination="GKF-av-M7N" id="Mil-ZW-pMe"/>
                         <outlet property="signInButton" destination="Ckf-8j-gex" id="19t-d8-U92"/>
                         <outlet property="signUpButton" destination="CAn-41-py1" id="DUR-dG-4Ss"/>
                     </connections>
