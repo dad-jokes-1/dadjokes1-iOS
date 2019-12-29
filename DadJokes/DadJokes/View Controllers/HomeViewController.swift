@@ -7,32 +7,26 @@
 //
 
 import UIKit
+import Lottie
 
 class HomeViewController: UIViewController {
     
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet var animationView: AnimationView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupViews()
     }
     
     func setupViews() {
         Utilities.styleFilledButton(signUpButton)
         Utilities.styleHollowButton(signInButton)
+        
+        let smileAnimation = Animation.named("smile")
+        animationView.animation = smileAnimation
+        animationView.play()
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
