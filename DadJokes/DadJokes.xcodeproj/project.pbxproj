@@ -31,8 +31,8 @@
 		CC76A80223BE90150094C2C9 /* URLSession+NetworkDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76A80123BE90150094C2C9 /* URLSession+NetworkDataLoader.swift */; };
 		CC76A80423BE93890094C2C9 /* MockDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76A80323BE93890094C2C9 /* MockDataLoader.swift */; };
 		CC76A80623BE93E70094C2C9 /* MockResultsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76A80523BE93E70094C2C9 /* MockResultsData.swift */; };
+		CC76A80823BE9D020094C2C9 /* laugh.json in Resources */ = {isa = PBXBuildFile; fileRef = CC76A80723BE9D020094C2C9 /* laugh.json */; };
 		CCD3E94E23B548EB002E082C /* DadJokesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD3E94D23B548EB002E082C /* DadJokesUITests.swift */; };
-		CCD3E95923B925E5002E082C /* smile.json in Resources */ = {isa = PBXBuildFile; fileRef = CCD3E95823B925E5002E082C /* smile.json */; };
 		E699BCC723AE8FB400594AFC /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E699BCC623AE8FB400594AFC /* APIController.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,10 +83,10 @@
 		CC76A80123BE90150094C2C9 /* URLSession+NetworkDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+NetworkDataLoader.swift"; sourceTree = "<group>"; };
 		CC76A80323BE93890094C2C9 /* MockDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataLoader.swift; sourceTree = "<group>"; };
 		CC76A80523BE93E70094C2C9 /* MockResultsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResultsData.swift; sourceTree = "<group>"; };
+		CC76A80723BE9D020094C2C9 /* laugh.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = laugh.json; sourceTree = "<group>"; };
 		CCD3E94B23B548EB002E082C /* DadJokesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DadJokesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCD3E94D23B548EB002E082C /* DadJokesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadJokesUITests.swift; sourceTree = "<group>"; };
 		CCD3E94F23B548EB002E082C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CCD3E95823B925E5002E082C /* smile.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = smile.json; sourceTree = "<group>"; };
 		E699BCC623AE8FB400594AFC /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIController.swift; path = DadJokes/APIController.swift; sourceTree = SOURCE_ROOT; };
 		FC6BCA5CAFD4743D9CB2EF1D /* Pods_DadJokes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DadJokes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -241,7 +241,7 @@
 		CCD3E95523B92296002E082C /* Animations */ = {
 			isa = PBXGroup;
 			children = (
-				CCD3E95823B925E5002E082C /* smile.json */,
+				CC76A80723BE9D020094C2C9 /* laugh.json */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -360,11 +360,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCD3E95923B925E5002E082C /* smile.json in Resources */,
 				29E29E1F23AB196800C89BF4 /* LaunchScreen.storyboard in Resources */,
 				2971AEDB23AC7E8B00F836BE /* GoogleService-Info.plist in Resources */,
 				29E29E1C23AB196800C89BF4 /* Assets.xcassets in Resources */,
 				29E29E1A23AB196700C89BF4 /* Main.storyboard in Resources */,
+				CC76A80823BE9D020094C2C9 /* laugh.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

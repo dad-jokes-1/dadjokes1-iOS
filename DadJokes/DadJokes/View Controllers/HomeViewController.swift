@@ -17,6 +17,10 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupViews()
     }
     
@@ -24,8 +28,9 @@ class HomeViewController: UIViewController {
         Utilities.styleFilledButton(signUpButton)
         Utilities.styleHollowButton(signInButton)
         
-        let smileAnimation = Animation.named("smile")
+        let smileAnimation = Animation.named("laugh")
         animationView.animation = smileAnimation
+        animationView.loopMode = .loop
         animationView.play()
     }
 
