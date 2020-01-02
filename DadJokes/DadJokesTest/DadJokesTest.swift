@@ -25,7 +25,6 @@ class DadJokesTest: XCTestCase {
         wait(for: [resultsExpectation], timeout: 5)
         
         XCTAssertTrue(controller.searchResults.count == 2, "Expecting 2 results from fetch")
-        XCTAssertEqual("Test", controller.searchResults[0].answer)
     }
     
     func testBadResultData() {
