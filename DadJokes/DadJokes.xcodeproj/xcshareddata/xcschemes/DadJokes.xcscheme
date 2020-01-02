@@ -38,6 +38,26 @@
                ReferencedContainer = "container:DadJokes.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CC76A7E623BE8E290094C2C9"
+               BuildableName = "DadJokesTests.xctest"
+               BlueprintName = "DadJokesTests"
+               ReferencedContainer = "container:DadJokes.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CC76A7F423BE8ECF0094C2C9"
+               BuildableName = "DadJokesTest.xctest"
+               BlueprintName = "DadJokesTest"
+               ReferencedContainer = "container:DadJokes.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
