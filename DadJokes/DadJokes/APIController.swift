@@ -28,8 +28,12 @@ struct HTTPMethod {
 
 class APIController {
     private let baseURL = URL(string: "https://dadjokes-3fe30.firebaseio.com/")!
+    let dataLoader: NetworkDataLoader
+    var error: Error?
+    var searchResults: [JokeRepresentation] = []
     
-    init() {
+    init(dataLoader: NetworkDataLoader = URLSession.shared) {
+        self.dataLoader = dataLoader
         fetchJokesFromServer()
     }
     
@@ -151,13 +155,7 @@ class APIController {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = HTTPMethod.get
         
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let response = response as? HTTPURLResponse,
-                response.statusCode != 200 {
-                completion(error)
-                return
-            }
-            
+        self.dataLoader.loadData(with: request) { (data, error) in
             if let error = error {
                 completion(error)
                 return
@@ -170,12 +168,16 @@ class APIController {
             
             do {
                 let jokeRepresentations = try JSONDecoder().decode([String: JokeRepresentation].self, from: data).map({ $0.value })
+                self.searchResults = jokeRepresentations
                 self.updateJokes(with: jokeRepresentations)
             } catch {
                 completion(error)
+                self.error = error
                 return
             }
-        }.resume()
+            
+            completion(error)
+        }
     }
     
     func updateJokes(with representations: [JokeRepresentation]) {
