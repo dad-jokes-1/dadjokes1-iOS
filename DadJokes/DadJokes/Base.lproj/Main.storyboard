@@ -428,13 +428,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ip-0I-a9z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-488.40579710144931" y="83.705357142857139"/>
+            <point key="canvasLocation" x="-516" y="461"/>
         </scene>
         <!--Private-->
         <scene sceneID="4aE-BT-J3J">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8uU-uE-DN2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Private" selectedImage="pencil.and.ellipsis.rectangle" catalog="system" id="3Wr-xy-Tjw"/>
+                    <tabBarItem key="tabBarItem" title="Private" image="pencil.and.ellipsis.rectangle" catalog="system" id="3Wr-xy-Tjw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CmP-xK-Ong">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
