@@ -152,8 +152,8 @@
 		29E29E1123AB196700C89BF4 /* DadJokes */ = {
 			isa = PBXGroup;
 			children = (
-				CC76A81623BFA7670094C2C9 /* Extensions */,
 				CCD3E95523B92296002E082C /* Animations */,
+				CC76A81623BFA7670094C2C9 /* Extensions */,
 				29E29E2A23AB1B1300C89BF4 /* Helpers */,
 				29E29E2923AB1B0D00C89BF4 /* Models */,
 				29E29E2823AB1B0600C89BF4 /* Model Controllers */,
@@ -208,7 +208,6 @@
 			children = (
 				2971AED823AC7AB000F836BE /* Utilities.swift */,
 				CC76A7FF23BE8FD70094C2C9 /* NetworkDataLoader.swift */,
-				CC76A80123BE90150094C2C9 /* URLSession+NetworkDataLoader.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -248,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				CC76A81723BFA7770094C2C9 /* UIViewController+Ext.swift */,
+				CC76A80123BE90150094C2C9 /* URLSession+NetworkDataLoader.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
