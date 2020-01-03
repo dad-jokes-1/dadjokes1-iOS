@@ -32,6 +32,11 @@
 		CC76A80423BE93890094C2C9 /* MockDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76A80323BE93890094C2C9 /* MockDataLoader.swift */; };
 		CC76A80623BE93E70094C2C9 /* MockResultsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76A80523BE93E70094C2C9 /* MockResultsData.swift */; };
 		CC76A80823BE9D020094C2C9 /* laugh.json in Resources */ = {isa = PBXBuildFile; fileRef = CC76A80723BE9D020094C2C9 /* laugh.json */; };
+		CC76A80F23BFA5F60094C2C9 /* DJButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76A80E23BFA5F60094C2C9 /* DJButton.swift */; };
+		CC76A81123BFA60A0094C2C9 /* DJTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76A81023BFA60A0094C2C9 /* DJTitleLabel.swift */; };
+		CC76A81323BFA6130094C2C9 /* DJBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76A81223BFA6130094C2C9 /* DJBodyLabel.swift */; };
+		CC76A81523BFA6260094C2C9 /* DJAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76A81423BFA6260094C2C9 /* DJAlertVC.swift */; };
+		CC76A81823BFA7770094C2C9 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76A81723BFA7770094C2C9 /* UIViewController+Ext.swift */; };
 		CCD3E94E23B548EB002E082C /* DadJokesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD3E94D23B548EB002E082C /* DadJokesUITests.swift */; };
 		E699BCC723AE8FB400594AFC /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E699BCC623AE8FB400594AFC /* APIController.swift */; };
 /* End PBXBuildFile section */
@@ -84,6 +89,11 @@
 		CC76A80323BE93890094C2C9 /* MockDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataLoader.swift; sourceTree = "<group>"; };
 		CC76A80523BE93E70094C2C9 /* MockResultsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResultsData.swift; sourceTree = "<group>"; };
 		CC76A80723BE9D020094C2C9 /* laugh.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = laugh.json; sourceTree = "<group>"; };
+		CC76A80E23BFA5F60094C2C9 /* DJButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJButton.swift; sourceTree = "<group>"; };
+		CC76A81023BFA60A0094C2C9 /* DJTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJTitleLabel.swift; sourceTree = "<group>"; };
+		CC76A81223BFA6130094C2C9 /* DJBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJBodyLabel.swift; sourceTree = "<group>"; };
+		CC76A81423BFA6260094C2C9 /* DJAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJAlertVC.swift; sourceTree = "<group>"; };
+		CC76A81723BFA7770094C2C9 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		CCD3E94B23B548EB002E082C /* DadJokesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DadJokesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCD3E94D23B548EB002E082C /* DadJokesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadJokesUITests.swift; sourceTree = "<group>"; };
 		CCD3E94F23B548EB002E082C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -142,11 +152,12 @@
 		29E29E1123AB196700C89BF4 /* DadJokes */ = {
 			isa = PBXGroup;
 			children = (
+				CC76A81623BFA7670094C2C9 /* Extensions */,
 				CCD3E95523B92296002E082C /* Animations */,
 				29E29E2A23AB1B1300C89BF4 /* Helpers */,
 				29E29E2923AB1B0D00C89BF4 /* Models */,
 				29E29E2823AB1B0600C89BF4 /* Model Controllers */,
-				29E29E2723AB1B0000C89BF4 /* Views */,
+				CC76A80D23BFA5DC0094C2C9 /* Custom Views */,
 				29E29E2623AB1AF500C89BF4 /* View Controllers */,
 				29E29E1223AB196700C89BF4 /* AppDelegate.swift */,
 				29E29E1423AB196700C89BF4 /* SceneDelegate.swift */,
@@ -171,13 +182,6 @@
 				2971AEDC23AC83B600F836BE /* HomeViewController.swift */,
 			);
 			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		29E29E2723AB1B0000C89BF4 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		29E29E2823AB1B0600C89BF4 /* Model Controllers */ = {
@@ -227,6 +231,25 @@
 				CC76A7F923BE8ECF0094C2C9 /* Info.plist */,
 			);
 			path = DadJokesTest;
+			sourceTree = "<group>";
+		};
+		CC76A80D23BFA5DC0094C2C9 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC76A81423BFA6260094C2C9 /* DJAlertVC.swift */,
+				CC76A80E23BFA5F60094C2C9 /* DJButton.swift */,
+				CC76A81023BFA60A0094C2C9 /* DJTitleLabel.swift */,
+				CC76A81223BFA6130094C2C9 /* DJBodyLabel.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		CC76A81623BFA7670094C2C9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CC76A81723BFA7770094C2C9 /* UIViewController+Ext.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CCD3E94C23B548EB002E082C /* DadJokesUITests */ = {
@@ -439,15 +462,20 @@
 				29E29E1523AB196700C89BF4 /* SceneDelegate.swift in Sources */,
 				2971AEDD23AC83B600F836BE /* HomeViewController.swift in Sources */,
 				2971AED523AB31B000F836BE /* PrivateJokesTableViewController.swift in Sources */,
+				CC76A81323BFA6130094C2C9 /* DJBodyLabel.swift in Sources */,
 				93564B4823AE9F75002C4CC6 /* CoreDataStack.swift in Sources */,
 				2971AEE023AE9A8000F836BE /* Joke.xcdatamodeld in Sources */,
+				CC76A81523BFA6260094C2C9 /* DJAlertVC.swift in Sources */,
 				93564B4423AE9CFF002C4CC6 /* JokeRepresentation.swift in Sources */,
 				E699BCC723AE8FB400594AFC /* APIController.swift in Sources */,
+				CC76A81823BFA7770094C2C9 /* UIViewController+Ext.swift in Sources */,
 				2971AED923AC7AB000F836BE /* Utilities.swift in Sources */,
 				93564B4623AE9E27002C4CC6 /* Joke+Convenience.swift in Sources */,
 				CC76A80023BE8FD70094C2C9 /* NetworkDataLoader.swift in Sources */,
 				2971AED723AB31CD00F836BE /* PrivateJokeDetailViewController.swift in Sources */,
+				CC76A81123BFA60A0094C2C9 /* DJTitleLabel.swift in Sources */,
 				2971AED123AB316000F836BE /* SignUpViewController.swift in Sources */,
+				CC76A80F23BFA5F60094C2C9 /* DJButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

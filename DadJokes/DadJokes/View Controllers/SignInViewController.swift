@@ -30,17 +30,29 @@ class SignInViewController: UIViewController {
     
     @IBAction func signInButtonTapped(_ sender: Any) {
         guard let email = emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-            let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else { return }
+            let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+            !email.isEmpty,
+            !password.isEmpty else {
+                self.presentDJAlertOnMainThread(title: "Error Signing In", message: "Please provide your email and password before trying to sign in.", buttonTitle: "Ok")
+                return
+        }
         
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             if error != nil {
-                let ac = UIAlertController(title: "Error!", message: "\(error!.localizedDescription)", preferredStyle: .alert)
-                ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(ac, animated: true) {
-                    self.emailTextField.text = ""
-                    self.passwordTextField.text = ""
-                    self.emailTextField.becomeFirstResponder()
+                if let errCode = AuthErrorCode(rawValue: error!._code) {
+                    switch errCode {
+                    case .invalidEmail:
+                        self.presentDJAlertOnMainThread(title: "Error Signing In", message: "The email you entered was not correct. Please try again.", buttonTitle: "Ok")
+                    case .wrongPassword:
+                        self.presentDJAlertOnMainThread(title: "Error Signing In", message: "The password you entered was not correct. Please try again.", buttonTitle: "Ok")
+                    default:
+                        self.presentDJAlertOnMainThread(title: "Error Signing In", message: "The information you entered was not correct. Please enter your username and password.", buttonTitle: "Ok")
+                    }
                 }
+                
+                self.emailTextField.text = ""
+                self.passwordTextField.text = ""
+                self.emailTextField.becomeFirstResponder()
             } else {
                 let privateJokesController = self.storyboard?.instantiateViewController(withIdentifier: "PrivateJokesVC") as! PrivateJokesTableViewController
                 self.navigationController?.pushViewController(privateJokesController, animated: true)
