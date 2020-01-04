@@ -15,12 +15,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dadArt" translatesAutoresizingMaskIntoConstraints="NO" id="YXF-vS-DHn">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="laugh" translatesAutoresizingMaskIntoConstraints="NO" id="YXF-vS-DHn">
+                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Q1K-4g-SCG"/>
+                                    <constraint firstAttribute="width" constant="200" id="o8T-aD-Hxx"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YXF-vS-DHn" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="MJg-Ny-CMu"/>
+                            <constraint firstItem="YXF-vS-DHn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="i8t-oL-07o"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -30,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dadArt" width="455" height="256"/>
+        <image name="laugh" width="640" height="640"/>
     </resources>
 </document>
