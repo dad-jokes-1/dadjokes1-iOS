@@ -11,12 +11,12 @@ import Firebase
 
 class SignUpViewController: UIViewController {
     
-    @IBOutlet weak var firstNameTextField: UITextField!
-    @IBOutlet weak var lastNameTextField: UITextField!
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet private weak var firstNameTextField: UITextField!
+    @IBOutlet private weak var lastNameTextField: UITextField!
+    @IBOutlet private weak var usernameTextField: UITextField!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var signUpButton: UIButton!
     
 
     override func viewDidLoad() {
@@ -39,25 +39,25 @@ class SignUpViewController: UIViewController {
             let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
             !email.isEmpty,
             !password.isEmpty else {
-                self.presentDJAlertOnMainThread(title: "Error Signing Up", message: "Please provide your email address and a password before trying to sign up.", buttonTitle: "Ok")
+                self.presentDJAlertOnMainThread(title: "Error Signing Up", message: DJError.emptyEmailAndPasswordSignUp.rawValue, buttonTitle: "Ok")
                 return
         }
         
-        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+        Auth.auth().createUser(withEmail: email, password: password) { _, error in
             if error != nil {
                 if let errCode = AuthErrorCode(rawValue: error!._code) {
                     switch errCode {
                     case .invalidEmail:
-                        self.presentDJAlertOnMainThread(title: "Error Signing Up", message: "The email you entered is not valid. Please try again.", buttonTitle: "Ok")
+                        self.presentDJAlertOnMainThread(title: "Error Signing Up", message: DJError.invalidEmail.rawValue, buttonTitle: "Ok")
                     case .emailAlreadyInUse:
-                        self.presentDJAlertOnMainThread(title: "Error Signing Up", message: "The email you entered is already in use. Please use a different email address.", buttonTitle: "Ok")
+                        self.presentDJAlertOnMainThread(title: "Error Signing Up", message: DJError.emailAlreadyInUse.rawValue, buttonTitle: "Ok")
                         self.emailTextField.text = ""
                     default:
-                        self.presentDJAlertOnMainThread(title: "Error Signing Up", message: "There was an issue trying to sign up. Please try again.", buttonTitle: "Ok")
+                        self.presentDJAlertOnMainThread(title: "Error Signing Up", message: DJError.generalSignUpError.rawValue, buttonTitle: "Ok")
                     }
                 }
             } else {
-                Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+                Auth.auth().signIn(withEmail: email, password: password) { _, error in
                     if error == nil {
                         guard let privateJokesController = self.storyboard?.instantiateViewController(withIdentifier: "PrivateJokesVC") as? PrivateJokesTableViewController else { return }
                         self.navigationController?.pushViewController(privateJokesController, animated: true)

@@ -10,8 +10,8 @@ import UIKit
 
 class PrivateJokeDetailViewController: UIViewController {
     
-    @IBOutlet weak var jokeTitleTextView: UITextView!
-    @IBOutlet weak var jokePunchlineTextView: UITextView!
+    @IBOutlet private weak var jokeTitleTextView: UITextView!
+    @IBOutlet private weak var jokePunchlineTextView: UITextView!
     
     var apiController: APIController?
     var joke: Joke?

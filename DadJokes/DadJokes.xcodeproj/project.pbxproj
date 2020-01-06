@@ -37,6 +37,7 @@
 		CC76A81323BFA6130094C2C9 /* DJBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76A81223BFA6130094C2C9 /* DJBodyLabel.swift */; };
 		CC76A81523BFA6260094C2C9 /* DJAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76A81423BFA6260094C2C9 /* DJAlertVC.swift */; };
 		CC76A81823BFA7770094C2C9 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76A81723BFA7770094C2C9 /* UIViewController+Ext.swift */; };
+		CC76A82623C3C0BF0094C2C9 /* DJErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC76A82523C3C0BF0094C2C9 /* DJErrorMessage.swift */; };
 		CCD3E94E23B548EB002E082C /* DadJokesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD3E94D23B548EB002E082C /* DadJokesUITests.swift */; };
 		E699BCC723AE8FB400594AFC /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E699BCC623AE8FB400594AFC /* APIController.swift */; };
 /* End PBXBuildFile section */
@@ -94,6 +95,7 @@
 		CC76A81223BFA6130094C2C9 /* DJBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJBodyLabel.swift; sourceTree = "<group>"; };
 		CC76A81423BFA6260094C2C9 /* DJAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJAlertVC.swift; sourceTree = "<group>"; };
 		CC76A81723BFA7770094C2C9 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		CC76A82523C3C0BF0094C2C9 /* DJErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DJErrorMessage.swift; sourceTree = "<group>"; };
 		CCD3E94B23B548EB002E082C /* DadJokesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DadJokesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCD3E94D23B548EB002E082C /* DadJokesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadJokesUITests.swift; sourceTree = "<group>"; };
 		CCD3E94F23B548EB002E082C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			children = (
 				2971AED823AC7AB000F836BE /* Utilities.swift */,
 				CC76A7FF23BE8FD70094C2C9 /* NetworkDataLoader.swift */,
+				CC76A82523C3C0BF0094C2C9 /* DJErrorMessage.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC76A82623C3C0BF0094C2C9 /* DJErrorMessage.swift in Sources */,
 				2971AECD23AB310D00F836BE /* PublicJokesTableViewController.swift in Sources */,
 				2971AECF23AB313300F836BE /* PublicJokeDetailViewController.swift in Sources */,
 				CC76A80223BE90150094C2C9 /* URLSession+NetworkDataLoader.swift in Sources */,
