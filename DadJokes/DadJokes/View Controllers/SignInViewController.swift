@@ -11,9 +11,9 @@ import Firebase
 
 class SignInViewController: UIViewController {
     
-    @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet private weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var signInButton: UIButton!
     
 
     override func viewDidLoad() {
@@ -33,20 +33,20 @@ class SignInViewController: UIViewController {
             let password = passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
             !email.isEmpty,
             !password.isEmpty else {
-                self.presentDJAlertOnMainThread(title: "Error Signing In", message: "Please provide your email and password before trying to sign in.", buttonTitle: "Ok")
+                self.presentDJAlertOnMainThread(title: "Error Signing In", message: DJError.emptyEmailAndPassword.rawValue, buttonTitle: "Ok")
                 return
         }
         
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+        Auth.auth().signIn(withEmail: email, password: password) { _, error in
             if error != nil {
                 if let errCode = AuthErrorCode(rawValue: error!._code) {
                     switch errCode {
                     case .invalidEmail:
-                        self.presentDJAlertOnMainThread(title: "Error Signing In", message: "The email you entered was not correct. Please try again.", buttonTitle: "Ok")
+                        self.presentDJAlertOnMainThread(title: "Error Signing In", message: DJError.incorrectEmail.rawValue, buttonTitle: "Ok")
                     case .wrongPassword:
-                        self.presentDJAlertOnMainThread(title: "Error Signing In", message: "The password you entered was not correct. Please try again.", buttonTitle: "Ok")
+                        self.presentDJAlertOnMainThread(title: "Error Signing In", message: DJError.incorrectPassword.rawValue, buttonTitle: "Ok")
                     default:
-                        self.presentDJAlertOnMainThread(title: "Error Signing In", message: "The information you entered was not correct. Please enter your email and password.", buttonTitle: "Ok")
+                        self.presentDJAlertOnMainThread(title: "Error Signing In", message: DJError.generalWrongInfo.rawValue, buttonTitle: "Ok")
                     }
                 }
                 

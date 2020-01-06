@@ -11,9 +11,9 @@ import Lottie
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var signUpButton: UIButton!
-    @IBOutlet weak var signInButton: UIButton!
-    @IBOutlet var animationView: AnimationView!
+    @IBOutlet private weak var signUpButton: UIButton!
+    @IBOutlet private weak var signInButton: UIButton!
+    @IBOutlet private var animationView: AnimationView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
