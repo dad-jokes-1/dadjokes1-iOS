@@ -46,7 +46,7 @@ class SignInViewController: UIViewController {
                     case .wrongPassword:
                         self.presentDJAlertOnMainThread(title: "Error Signing In", message: "The password you entered was not correct. Please try again.", buttonTitle: "Ok")
                     default:
-                        self.presentDJAlertOnMainThread(title: "Error Signing In", message: "The information you entered was not correct. Please enter your username and password.", buttonTitle: "Ok")
+                        self.presentDJAlertOnMainThread(title: "Error Signing In", message: "The information you entered was not correct. Please enter your email and password.", buttonTitle: "Ok")
                     }
                 }
                 
