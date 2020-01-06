@@ -47,13 +47,11 @@ class DadJokesUITests: XCTestCase {
         XCTAssertTrue(app.secureTextFields["password"].exists)
     }
     
-    func testBlankSignInShowsAlert() {
+    func testBlankSignInShowsCustomAlert() {
         let signInButton = app.buttons["Sign In"]
         signInButton.tap()
-        app.textFields["email"].tap()
-        app.secureTextFields["password"].tap()
         signInButton.tap()
         
-        XCTAssertTrue(app.alerts["Error!"].exists)
+        XCTAssertTrue(app.buttons["Ok"].exists)
     }
 }
