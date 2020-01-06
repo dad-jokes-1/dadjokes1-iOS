@@ -54,24 +54,12 @@ class SignInViewController: UIViewController {
                 self.passwordTextField.text = ""
                 self.emailTextField.becomeFirstResponder()
             } else {
-                let privateJokesController = self.storyboard?.instantiateViewController(withIdentifier: "PrivateJokesVC") as! PrivateJokesTableViewController
+                guard let privateJokesController = self.storyboard?.instantiateViewController(withIdentifier: "PrivateJokesVC") as? PrivateJokesTableViewController else { return }
                 self.navigationController?.pushViewController(privateJokesController, animated: true)
                 self.view.window?.makeKeyAndVisible()
             }
         }
         
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
