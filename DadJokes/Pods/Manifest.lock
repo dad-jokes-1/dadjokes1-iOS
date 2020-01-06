@@ -57,14 +57,12 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
-  - SwiftyJSON (4.3.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
   - Firebase/Auth
   - Firebase/Database
   - lottie-ios
-  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
@@ -83,7 +81,6 @@ SPEC REPOS:
     - leveldb-library
     - lottie-ios
     - nanopb
-    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
@@ -101,8 +98,7 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   lottie-ios: 32bf84389337d86fbc8b12266e88452e0abf1dee
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
-  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: 5930cd361c46f585d06ccd010ae48d633d3a841c
+PODFILE CHECKSUM: cfe8e93856fada8c698d437a4b87321435f70dc4
 
 COCOAPODS: 1.8.3
