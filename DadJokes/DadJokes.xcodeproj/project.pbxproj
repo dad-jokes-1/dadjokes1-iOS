@@ -289,6 +289,7 @@
 				29E29E0C23AB196700C89BF4 /* Frameworks */,
 				29E29E0D23AB196700C89BF4 /* Resources */,
 				0FC72B995AFD99D06C96C764 /* [CP] Embed Pods Frameworks */,
+				CC76A82423C3AA250094C2C9 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -424,6 +425,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DadJokes/Pods-DadJokes-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		CC76A82423C3AA250094C2C9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		CF6A280211E2370B93ACCF82 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

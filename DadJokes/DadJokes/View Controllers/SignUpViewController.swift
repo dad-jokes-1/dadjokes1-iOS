@@ -59,7 +59,7 @@ class SignUpViewController: UIViewController {
             } else {
                 Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
                     if error == nil {
-                        let privateJokesController = self.storyboard?.instantiateViewController(withIdentifier: "PrivateJokesVC") as! PrivateJokesTableViewController
+                        guard let privateJokesController = self.storyboard?.instantiateViewController(withIdentifier: "PrivateJokesVC") as? PrivateJokesTableViewController else { return }
                         self.navigationController?.pushViewController(privateJokesController, animated: true)
                         self.view.window?.makeKeyAndVisible()
                     }
