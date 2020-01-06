@@ -40,7 +40,7 @@ class DadJokesTest: XCTestCase {
         
         wait(for: [resultsExpectation], timeout: 5)
         
-        XCTAssertTrue(controller.searchResults.count == 0, "Expecting no results for bad data")
+        XCTAssertTrue(controller.searchResults.isEmpty, "Expecting no results for bad data")
         XCTAssertNotNil(controller.error)
     }
     
@@ -57,7 +57,7 @@ class DadJokesTest: XCTestCase {
         
         wait(for: [resultsExpectation], timeout: 5)
         
-        XCTAssertTrue(controller.searchResults.count == 0, "Expecting no results for bad data")
+        XCTAssertTrue(controller.searchResults.isEmpty, "Expecting no results for bad data")
         XCTAssertNil(controller.error)
     }
 
