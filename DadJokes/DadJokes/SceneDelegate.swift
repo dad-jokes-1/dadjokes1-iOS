@@ -19,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func configureNavigationAndTabBarAppearance() {
-        UITabBar.appearance().tintColor = UIColor.init(red: 48/255, green: 173/255, blue: 99/255, alpha: 1)
-        UINavigationBar.appearance().tintColor = UIColor.init(red: 48/255, green: 173/255, blue: 99/255, alpha: 1)
+        UITabBar.appearance().tintColor = UIColor.init(red: 48 / 255, green: 173 / 255, blue: 99 / 255, alpha: 1)
+        UINavigationBar.appearance().tintColor = UIColor.init(red: 48 / 255, green: 173 / 255, blue: 99 / 255, alpha: 1)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
