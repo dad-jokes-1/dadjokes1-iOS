@@ -18,7 +18,7 @@ class DadJokesTest: XCTestCase {
         let controller = APIController(dataLoader: mock)
         let resultsExpectation = expectation(description: "Wait for results")
         
-        controller.fetchJokesFromServer { (error) in
+        controller.fetchJokesFromServer { _ in
             resultsExpectation.fulfill()
         }
         
@@ -34,7 +34,7 @@ class DadJokesTest: XCTestCase {
         let controller = APIController(dataLoader: mock)
         let resultsExpectation = expectation(description: "Wait for results")
         
-        controller.fetchJokesFromServer { (error) in
+        controller.fetchJokesFromServer { _ in
             resultsExpectation.fulfill()
         }
         
@@ -51,7 +51,7 @@ class DadJokesTest: XCTestCase {
         let controller = APIController(dataLoader: mock)
         let resultsExpectation = expectation(description: "Wait for results")
         
-        controller.fetchJokesFromServer { (error) in
+        controller.fetchJokesFromServer { _ in
             resultsExpectation.fulfill()
         }
         

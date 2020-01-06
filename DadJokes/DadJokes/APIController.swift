@@ -36,7 +36,7 @@ class APIController {
         fetchJokesFromServer()
     }
     
-    func signUp(username: String, email: String, password: String, completion: @escaping (Error?) -> Void = {_ in})  {
+    func signUp(username: String, email: String, password: String, completion: @escaping (Error?) -> Void = { _ in }) {
         let signUpURL = baseURL.appendingPathComponent("register")
         
         var request = URLRequest(url: signUpURL)
@@ -56,7 +56,7 @@ class APIController {
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 200 {
                 
-                completion(NSError(domain:"", code: response.statusCode, userInfo: nil))
+                completion(NSError(domain: "", code: response.statusCode, userInfo: nil))
                 return
             }
             if let error = error {
@@ -97,7 +97,7 @@ class APIController {
             return
         }
         
-        AF.request(request).response { (response) in
+        AF.request(request).response { response in
             switch response.result {
             case .success:
                 print("Success")
@@ -130,7 +130,7 @@ class APIController {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = HTTPMethod.delete
         
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
+        URLSession.shared.dataTask(with: request) { _, response, error in
             if let response = response as? HTTPURLResponse,
                 response.statusCode != 200 {
                 completion(error)
@@ -154,7 +154,7 @@ class APIController {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = HTTPMethod.get
         
-        self.dataLoader.loadData(with: request) { (data, error) in
+        self.dataLoader.loadData(with: request) { data, error in
             if let error = error {
                 completion(error)
                 return

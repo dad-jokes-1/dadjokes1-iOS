@@ -10,8 +10,8 @@ import UIKit
 
 class PublicJokeDetailViewController: UIViewController {
     
-    @IBOutlet weak var jokeTitleLabel: UILabel!
-    @IBOutlet weak var jokePunchlineLabel: UILabel!
+    @IBOutlet private weak var jokeTitleLabel: UILabel!
+    @IBOutlet private weak var jokePunchlineLabel: UILabel!
     
 
     override func viewDidLoad() {
