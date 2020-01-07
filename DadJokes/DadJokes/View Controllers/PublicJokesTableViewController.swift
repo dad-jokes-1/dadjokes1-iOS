@@ -14,12 +14,23 @@ class PublicJokesTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
+    // alert 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        let alert = UIAlertController(title: "Sign up Alert!", message: "To view more or add dad jokes please sign up, under private tab.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
+        NSLog("The \"OK\" alert occured.")
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 
     // MARK: - Table view data source
-
+// Creating an alert to sign up
+//    func createAlert(title: String, message: String) {
+//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.alert)
+//
+//    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 0
     }

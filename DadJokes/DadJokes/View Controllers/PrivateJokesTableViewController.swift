@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class PrivateJokesTableViewController: UITableViewController {
     
@@ -39,8 +40,15 @@ class PrivateJokesTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    // Sign out firebase
     @IBAction func signOutTapped(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+          self.navigationController?.popToRootViewController(animated: true)
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
     }
     
     // MARK: - Table view data source
