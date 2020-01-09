@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2971AECD23AB310D00F836BE /* PublicJokesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971AECC23AB310D00F836BE /* PublicJokesTableViewController.swift */; };
-		2971AECF23AB313300F836BE /* PublicJokeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971AECE23AB313300F836BE /* PublicJokeDetailViewController.swift */; };
 		2971AED123AB316000F836BE /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971AED023AB316000F836BE /* SignUpViewController.swift */; };
 		2971AED323AB317F00F836BE /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971AED223AB317F00F836BE /* SignInViewController.swift */; };
 		2971AED523AB31B000F836BE /* PrivateJokesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2971AED423AB31B000F836BE /* PrivateJokesTableViewController.swift */; };
@@ -62,7 +61,6 @@
 /* Begin PBXFileReference section */
 		0B082A2C63C0945798F67643 /* Pods-DadJokes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DadJokes.debug.xcconfig"; path = "Target Support Files/Pods-DadJokes/Pods-DadJokes.debug.xcconfig"; sourceTree = "<group>"; };
 		2971AECC23AB310D00F836BE /* PublicJokesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicJokesTableViewController.swift; sourceTree = "<group>"; };
-		2971AECE23AB313300F836BE /* PublicJokeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicJokeDetailViewController.swift; sourceTree = "<group>"; };
 		2971AED023AB316000F836BE /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2971AED223AB317F00F836BE /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		2971AED423AB31B000F836BE /* PrivateJokesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateJokesTableViewController.swift; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 			isa = PBXGroup;
 			children = (
 				2971AECC23AB310D00F836BE /* PublicJokesTableViewController.swift */,
-				2971AECE23AB313300F836BE /* PublicJokeDetailViewController.swift */,
 				2971AED023AB316000F836BE /* SignUpViewController.swift */,
 				2971AED223AB317F00F836BE /* SignInViewController.swift */,
 				2971AED423AB31B000F836BE /* PrivateJokesTableViewController.swift */,
@@ -477,7 +474,6 @@
 			files = (
 				CC76A82623C3C0BF0094C2C9 /* DJErrorMessage.swift in Sources */,
 				2971AECD23AB310D00F836BE /* PublicJokesTableViewController.swift in Sources */,
-				2971AECF23AB313300F836BE /* PublicJokeDetailViewController.swift in Sources */,
 				CC76A80223BE90150094C2C9 /* URLSession+NetworkDataLoader.swift in Sources */,
 				2971AED323AB317F00F836BE /* SignInViewController.swift in Sources */,
 				29E29E1323AB196700C89BF4 /* AppDelegate.swift in Sources */,

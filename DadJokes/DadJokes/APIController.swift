@@ -26,6 +26,8 @@ struct HTTPMethod {
 }
 
 class APIController {
+    static let shared = APIController()
+    
     private let baseURL = URL(string: "https://dadjokes-3fe30.firebaseio.com/")!
     let dataLoader: NetworkDataLoader
     var error: Error?

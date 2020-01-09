@@ -11,7 +11,7 @@ import CoreData
 
 class PrivateJokesTableViewController: UITableViewController {
     
-    let apiController = APIController()
+    let apiController = APIController.shared
     
     lazy var fetchedResultsController: NSFetchedResultsController<Joke> = {
         let fetchRequest: NSFetchRequest<Joke> = Joke.fetchRequest()

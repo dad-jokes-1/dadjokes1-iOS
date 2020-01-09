@@ -48,14 +48,23 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="smile"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dad Jokes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gx6-YI-Luf">
+                                <rect key="frame" x="40" y="128" width="334" height="57.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
+                                <color key="textColor" red="0.18823529410000001" green="0.67843137249999996" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="NMA-EY-5Pa" firstAttribute="trailing" secondItem="gx6-YI-Luf" secondAttribute="trailing" constant="40" id="4Tp-qz-d77"/>
                             <constraint firstItem="NMA-EY-5Pa" firstAttribute="bottom" secondItem="09d-mU-6c8" secondAttribute="bottom" constant="40" id="RfS-FI-fra"/>
                             <constraint firstItem="NMA-EY-5Pa" firstAttribute="trailing" secondItem="09d-mU-6c8" secondAttribute="trailing" constant="40" id="ZDo-jz-pWk"/>
                             <constraint firstItem="GKF-av-M7N" firstAttribute="centerY" secondItem="ALf-Dy-Im1" secondAttribute="centerY" id="drJ-fW-NdU"/>
+                            <constraint firstItem="gx6-YI-Luf" firstAttribute="leading" secondItem="NMA-EY-5Pa" secondAttribute="leading" constant="40" id="t5N-Qb-h15"/>
                             <constraint firstItem="GKF-av-M7N" firstAttribute="centerX" secondItem="ALf-Dy-Im1" secondAttribute="centerX" id="u2V-Va-9NK"/>
                             <constraint firstItem="09d-mU-6c8" firstAttribute="leading" secondItem="NMA-EY-5Pa" secondAttribute="leading" constant="40" id="uSk-Fg-eAU"/>
+                            <constraint firstItem="gx6-YI-Luf" firstAttribute="top" secondItem="NMA-EY-5Pa" secondAttribute="top" constant="40" id="zeX-j6-aiF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NMA-EY-5Pa"/>
                     </view>
@@ -68,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Rb-aO-evV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1043" y="800"/>
+            <point key="canvasLocation" x="1042.0289855072465" y="799.55357142857144"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="lnn-n7-aM2">
@@ -280,9 +289,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="CIX-hh-4eC" kind="show" id="idT-nb-BtE"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -295,50 +301,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9l2-hM-ked" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042" y="84"/>
-        </scene>
-        <!--Public Joke Detail View Controller-->
-        <scene sceneID="eqh-q8-qrH">
-            <objects>
-                <viewController id="CIX-hh-4eC" customClass="PublicJokeDetailViewController" customModule="DadJokes" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pMI-0L-gDU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="z9y-IH-k5P">
-                                <rect key="frame" x="16" y="128" width="382" height="134.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXR-3A-pxm">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="43"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RiZ-iK-4y7">
-                                        <rect key="frame" x="0.0" y="103" width="382" height="31.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="z9y-IH-k5P" firstAttribute="leading" secondItem="lga-3S-ugg" secondAttribute="leading" constant="16" id="8MV-aP-sEG"/>
-                            <constraint firstItem="lga-3S-ugg" firstAttribute="trailing" secondItem="z9y-IH-k5P" secondAttribute="trailing" constant="16" id="E7M-18-JU9"/>
-                            <constraint firstItem="z9y-IH-k5P" firstAttribute="top" secondItem="lga-3S-ugg" secondAttribute="top" constant="40" id="bdG-8u-5B8"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="lga-3S-ugg"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="M4R-wB-WRl"/>
-                    <connections>
-                        <outlet property="jokePunchlineLabel" destination="RiZ-iK-4y7" id="N9z-UD-Ao4"/>
-                        <outlet property="jokeTitleLabel" destination="HXR-3A-pxm" id="ZNA-hV-dYL"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BZE-V4-fiJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1880" y="-226"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Qtp-Kf-VRF">
