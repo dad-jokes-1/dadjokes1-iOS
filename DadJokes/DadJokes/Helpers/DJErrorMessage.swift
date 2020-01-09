@@ -18,4 +18,5 @@ enum DJError: String, Error {
     case emailAlreadyInUse = "The email you entered is already in use. Please use a different email address."
     case generalSignUpError = "There was an issue trying to sign up. Please try again."
     case publicCantViewPunchline = "Please create an account or sign in to view the joke punchline."
+    case errorSigningOut = "There was an error signing out. Please try again."
 }
