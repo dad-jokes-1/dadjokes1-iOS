@@ -8,10 +8,11 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class PrivateJokesTableViewController: UITableViewController {
     
-    let apiController = APIController()
+    let apiController = APIController.shared
     
     lazy var fetchedResultsController: NSFetchedResultsController<Joke> = {
         let fetchRequest: NSFetchRequest<Joke> = Joke.fetchRequest()
@@ -40,7 +41,12 @@ class PrivateJokesTableViewController: UITableViewController {
     }
     
     @IBAction func signOutTapped(_ sender: Any) {
-        self.navigationController?.popToRootViewController(animated: true)
+        do {
+            try Auth.auth().signOut()
+            self.navigationController?.popToRootViewController(animated: true)
+        } catch {
+            presentDJAlertOnMainThread(title: "Error", message: DJError.errorSigningOut.rawValue, buttonTitle: "Ok")
+        }
     }
     
     // MARK: - Table view data source
