@@ -13,32 +13,37 @@ class PublicJokesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+//    var jokesTest = [String]()
     
-    // alert 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let alert = UIAlertController(title: "Sign up Alert!", message: "To view more or add dad jokes please sign up, under private tab.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Default action"), style: .default, handler: { _ in
-        NSLog("The \"OK\" alert occured.")
-        }))
-        self.present(alert, animated: true, completion: nil)
+//        jokesTest = ["Joke1", "Joke2", "Joke3"]
+
     }
 
     // MARK: - Table view data source
-// Creating an alert to sign up
-//    func createAlert(title: String, message: String) {
-//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.alert)
-//
+
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        return 1 // test
 //    }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return jokesTest.count
         return 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PublicJokeCell", for: indexPath)
         
+//        cell.textLabel?.text = jokesTest[indexPath.row]
+
         return cell
+    }
+    
+    // Alert
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        self.presentDJAlertOnMainThread(title: "Sign Up Alert!", message: DJError.singupError.rawValue, buttonTitle: "Ok")
     }
 
     /*

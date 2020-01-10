@@ -46,8 +46,8 @@ class PrivateJokesTableViewController: UITableViewController {
         do {
           try firebaseAuth.signOut()
           self.navigationController?.popToRootViewController(animated: true)
-        } catch let signOutError as NSError {
-          print ("Error signing out: %@", signOutError)
+        } catch {
+          presentDJAlertOnMainThread(title: "Error", message: DJError.signoutError.rawValue, buttonTitle: "Ok")
         }
     }
     

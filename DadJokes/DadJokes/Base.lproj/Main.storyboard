@@ -280,9 +280,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="CIX-hh-4eC" kind="show" id="idT-nb-BtE"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -305,7 +302,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="z9y-IH-k5P">
-                                <rect key="frame" x="16" y="128" width="382" height="134.5"/>
+                                <rect key="frame" x="16" y="84" width="382" height="134.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXR-3A-pxm">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="43"/>
